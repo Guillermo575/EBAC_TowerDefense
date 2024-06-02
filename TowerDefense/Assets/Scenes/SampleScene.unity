@@ -2037,6 +2037,10 @@ PrefabInstance:
       value: Jefe
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 90caaaf8b1874224eaeaba71edc60d78, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 90caaaf8b1874224eaeaba71edc60d78, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 118c6ee8ad2d86e4cb2fa1c338667863, type: 2}
