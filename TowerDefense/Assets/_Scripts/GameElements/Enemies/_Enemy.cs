@@ -5,10 +5,12 @@ using UnityEngine.AI;
 public class _Enemy : MonoBehaviour
 {
     public GameObject objetivo;
+    internal int vidaMaxima = 100;
     public int vida = 100;
     internal Animator animator;
     internal virtual void Start()
     {
+        vidaMaxima = vida;
         GetComponent<NavMeshAgent>().SetDestination(objetivo.transform.position);
         animator = GetComponent<Animator>();
         animator.SetBool("IsMoving", true);
