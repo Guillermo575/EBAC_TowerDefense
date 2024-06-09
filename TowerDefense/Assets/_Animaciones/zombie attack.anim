@@ -75356,9 +75356,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 2.6333334
-    functionName: MakeDamage
+    functionName: CallEvent
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: 6d3a34930710cfe468d4dda718de6ba8, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

@@ -697,6 +697,9 @@ PrefabInstance:
       addedObject: {fileID: -8198611704495612352}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bd0c016a78a34847a5fb17052e9103c, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2199934372011064884}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bd0c016a78a34847a5fb17052e9103c, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 9045539115480025767}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bd0c016a78a34847a5fb17052e9103c, type: 3}
       insertIndex: -1
@@ -724,6 +727,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivo: {fileID: 0}
   vida: 50
+  damage: 10
+--- !u!114 &2199934372011064884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550427568623862402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afd8c0972289b448b1867974d405385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evento:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -8198611704495612352}
+        m_TargetAssemblyTypeName: _Enemy, Assembly-CSharp
+        m_MethodName: MakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &9045539115480025767
 Rigidbody:
   m_ObjectHideFlags: 0

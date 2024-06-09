@@ -7,6 +7,7 @@ public class _Enemy : MonoBehaviour
     public GameObject objetivo;
     internal int vidaMaxima = 100;
     public int vida = 100;
+    public int damage = 40;
     internal Animator animator;
     internal virtual void Start()
     {
@@ -28,7 +29,8 @@ public class _Enemy : MonoBehaviour
     }
     public void MakeDamage()
     {
-        objetivo?.GetComponent<SceneObjective>().ReceiveDamage(40);
+        if (objetivo == null) return;
+        objetivo?.GetComponent<SceneObjective>().ReceiveDamage(damage);
     }
     public void ReceiveDamage(int damage)
     {
