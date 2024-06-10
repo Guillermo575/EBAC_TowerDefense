@@ -777,10 +777,19 @@
             "id": "21657d2c-1218-4450-ac19-5c18fb0dd166",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Toque",
                     "type": "PassThrough",
                     "id": "07d4d11e-0e82-4cc7-b610-df83d5d61018",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PosicionToque",
+                    "type": "PassThrough",
+                    "id": "688cc667-3786-400b-90c3-b0394d932e08",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -790,11 +799,22 @@
                 {
                     "name": "",
                     "id": "995a9ab2-a360-4123-8f1a-3fe12dc935d8",
-                    "path": "",
-                    "interactions": "",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Press",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "Touch",
+                    "action": "Toque",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f3f972b-3719-4497-8881-ee1cf5ce22bb",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "PosicionToque",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
