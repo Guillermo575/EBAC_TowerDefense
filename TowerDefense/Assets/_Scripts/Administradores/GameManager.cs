@@ -100,7 +100,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        var objSuelo = GameObject.Find("Suelo");
         audioManager = AudioManager.GetManager();
         OnGamePause += delegate { audioManager.BGM.Pause(); audioManager.SFX.Pause(); };
         OnGameResume += delegate { audioManager.BGM.UnPause(); audioManager.SFX.UnPause(); };

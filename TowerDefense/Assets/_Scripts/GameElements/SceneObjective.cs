@@ -4,6 +4,8 @@ using UnityEngine;
 public class SceneObjective : MonoBehaviour
 {
     public int vida = 100;
+    public delegate void ObjetivoDestruido();
+    public event ObjetivoDestruido EnObjetivoDestruido;
     void Start()
     {
     }
@@ -11,7 +13,11 @@ public class SceneObjective : MonoBehaviour
     {
         if (vida <= 0)
         {
-            Destroy(this.gameObject);
+            if (EnObjetivoDestruido != null)
+            {
+                EnObjetivoDestruido();
+            }
+            Destroy(this.gameObject, 0.2f);
         }
     }
     public void ReceiveDamage(int damage = 20)

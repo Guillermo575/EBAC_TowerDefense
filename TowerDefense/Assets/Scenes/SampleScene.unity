@@ -738,6 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490841903}
+  - component: {fileID: 490841904}
   m_Layer: 0
   m_Name: AdminUI
   m_TagString: Untagged
@@ -760,6 +761,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &490841904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490841902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce6316c7f0063d41b719c91eba8acc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasPrincipal: {fileID: 1841969421}
+  menuGameOver: {fileID: 1790332407}
+  referenciaSpawner: {fileID: 1239104986}
+  referenciaObjetivo: {fileID: 1798864409}
 --- !u!1 &565487276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,6 +3551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1239104985}
+  - component: {fileID: 1239104986}
   m_Layer: 0
   m_Name: AdminSpawnEnemigos
   m_TagString: Untagged
@@ -3556,6 +3574,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1239104986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239104984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223f9f0f2c43a2242811835dbe00c5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabsEnemigos:
+  - {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+  - {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+  - {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+  - {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+  - {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+  - {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+  - {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+  - {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+  - {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+  - {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+  - {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+  oleada: 0
+  enemigosPorOleada: 14000000190000001e000000
+  referenciaObjetivo: {fileID: 1798864409}
 --- !u!1001 &1361139703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4731,6 +4776,11 @@ Transform:
   - {fileID: 790338010}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1790332407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8499011508075025419, guid: ec3052e0f787f45449307df2694456ff, type: 3}
+  m_PrefabInstance: {fileID: 862594399546678444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1798864403
 GameObject:
   m_ObjectHideFlags: 0

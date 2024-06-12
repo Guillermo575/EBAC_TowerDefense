@@ -12,9 +12,9 @@ public class _Enemy : MonoBehaviour
     internal virtual void Start()
     {
         vidaMaxima = vida;
-        GetComponent<NavMeshAgent>().SetDestination(objetivo.transform.position);
         animator = GetComponent<Animator>();
         animator.SetBool("IsMoving", true);
+        GetComponent<NavMeshAgent>().SetDestination(objetivo.transform.position);
     }
     internal virtual void Update()
     {
