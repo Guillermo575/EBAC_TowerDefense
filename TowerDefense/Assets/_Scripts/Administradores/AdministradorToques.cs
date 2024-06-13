@@ -6,6 +6,28 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 public class AdministradorToques : MonoBehaviour
 {
+    #region Singleton
+    private static AdministradorToques SingletonGameManager;
+    private AdministradorToques()
+    {
+    }
+    private void CreateSingleton()
+    {
+        if (SingletonGameManager == null)
+        {
+            SingletonGameManager = this;
+        }
+        else
+        {
+            Debug.LogError("Ya existe una instancia de esta clase");
+        }
+    }
+    public static AdministradorToques GetManager()
+    {
+        return SingletonGameManager;
+    }
+    #endregion
+
     public InputActionAsset inputs;
     private InputAction toque;
     private InputAction posicionToque;
@@ -25,6 +47,10 @@ public class AdministradorToques : MonoBehaviour
         inputs.Disable();
         TouchSimulation.Disable();
         toque.performed -= Toque;
+    }
+    private void Awake()
+    {
+        CreateSingleton();        
     }
     private void Start()
     {

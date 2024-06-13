@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class AdministradorUI : MonoBehaviour
 {
+    private GameManager gameManager;
     public GameObject canvasPrincipal;
-    public GameObject menuGameOver;
-    public AdminSpawnerEnemigos referenciaSpawner;
-    public SceneObjective referenciaObjetivo;
-    private void OnEnable()
-    {
-        referenciaObjetivo.EnObjetivoDestruido += MostrarMenuGameOver;
-    }
-    private void OnDisable()
-    {
-        referenciaObjetivo.EnObjetivoDestruido -= MostrarMenuGameOver;
-    }
     void Start()
     {
+        gameManager = GameManager.GetManager();
+        gameManager.OnGameResume += delegate { canvasPrincipal.SetActive(true); };
+        gameManager.OnGamePause += delegate { canvasPrincipal.SetActive(false); };
+        gameManager.OnGameEnd += delegate { canvasPrincipal.SetActive(false); };
     }
     void Update()
     {
@@ -27,27 +22,14 @@ public class AdministradorUI : MonoBehaviour
     }
     public void OcultarMenuFinOleada()
     {
-
     }
-    public void MostrarMenuGameOver()
+    public void AdministrarToogles(Toggle toggle)
     {
-        menuGameOver.SetActive(true);
-    }
-    public void OcultarMenuGameOver()
-    {
-        menuGameOver.SetActive(false);
-    }
-    public void FinalizarJuego()
-    {
-        Application.Quit();
-    }
-    public void CargarMenuPrincipal()
-    {
-        SceneManager.LoadScene(0);
-    }
-    public void ReintentarNivel()
-    {
-        int escenaActual = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(escenaActual);
+        GameObject[] lstToggle = GameObject.FindGameObjectsWithTag("ToggleTorre");
+        foreach (var objToggle in lstToggle)
+        {
+            var obj = objToggle.GetComponent<Toggle>();
+            obj.isOn = GameObject.ReferenceEquals(obj, toggle);
+        }
     }
 }

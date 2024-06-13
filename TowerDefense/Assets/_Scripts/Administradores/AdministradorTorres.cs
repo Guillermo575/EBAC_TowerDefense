@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class AdministradorTorres : MonoBehaviour
 {
-    public AdministradorToques referenciaAdminToques;
+    private AdministradorToques referenciaAdminToques;
     public enum TorreSeleccionada
     {
         Torre1,Torrre2,Torre3,Torre4,Torre5,
@@ -14,14 +14,19 @@ public class AdministradorTorres : MonoBehaviour
 
     private void OnEnable()
     {
+        if (referenciaAdminToques == null) return;
+        referenciaAdminToques.EnPlataformaTocada -= CrearTorre;
         referenciaAdminToques.EnPlataformaTocada += CrearTorre;
     }
     private void OnDisable()
     {
+        if (referenciaAdminToques == null) return;
         referenciaAdminToques.EnPlataformaTocada -= CrearTorre;
     }
     void Start()
-    {    
+    {
+        referenciaAdminToques = AdministradorToques.GetManager();
+        referenciaAdminToques.EnPlataformaTocada += CrearTorre;
     }
     void Update()
     {     

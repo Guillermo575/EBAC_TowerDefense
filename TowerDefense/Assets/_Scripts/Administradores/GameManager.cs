@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class GameManager : MonoBehaviour
 
     #region Privados
     private AudioManager audioManager;
+    public MathRNG mathRNG = new MathRNG(3241);
+    #endregion
+
+    #region Editor Variables
+    public SceneObjective referenciaObjetivo;
     #endregion
 
     #region Level Game Variables
@@ -51,6 +57,7 @@ public class GameManager : MonoBehaviour
     public event EventHandler OnGameOver;
     public event EventHandler OnGameExit;
     public event EventHandler OnGameLevelCleared;
+    public event EventHandler OnRoundStart;
     public void StartGame()
     {
         _GameEnd = false;
@@ -84,6 +91,10 @@ public class GameManager : MonoBehaviour
         _GameEnd = true;
         OnGameEnd?.Invoke(this, EventArgs.Empty);
     }
+    public void StartRound()
+    {
+        OnRoundStart?.Invoke(this, EventArgs.Empty);
+    }
     #endregion
 
     #region Awake, Start & Update
@@ -101,13 +112,44 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         audioManager = AudioManager.GetManager();
-        OnGamePause += delegate { audioManager.BGM.Pause(); audioManager.SFX.Pause(); };
-        OnGameResume += delegate { audioManager.BGM.UnPause(); audioManager.SFX.UnPause(); };
-        OnGameEnd += delegate { audioManager.BGM.Stop(); audioManager.SFX.Stop(); };
+        if (audioManager != null)
+        {
+            OnGamePause += delegate { audioManager.BGM.Pause(); audioManager.SFX.Pause(); };
+            OnGameResume += delegate { audioManager.BGM.UnPause(); audioManager.SFX.UnPause(); };
+            OnGameEnd += delegate { audioManager.BGM.Stop(); audioManager.SFX.Stop(); };
+        }
         StartGame();
+        Invoke("StartRound", 0.5f);
     }
     private void Update()
     {
+        if (IsGameEnd) return;
+        var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
+        if (lstEnemy.Length == 0)
+        {
+            var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
+            var lstSpawnersEnemigosPendientes = (from x in lstSpawners where x.getHordaActual() != null && x.getHordaActual().EnemigosPendientes select x).ToArray();
+            if (lstSpawnersEnemigosPendientes.Length == 0)
+            {
+                var lstSpawnersOlasFinalizadas = (from x in lstSpawners where !x.getOleadaFinalizada() select x).ToArray();
+                if (lstSpawnersOlasFinalizadas.Length > 0)
+                {
+                    StartRound();
+                }
+                else
+                {
+                    LevelClearedGame();
+                }
+            }
+        }
+    }
+    private void OnEnable()
+    {
+        referenciaObjetivo.EnObjetivoDestruido += GameOver;
+    }
+    private void OnDisable()
+    {
+        referenciaObjetivo.EnObjetivoDestruido -= GameOver;
     }
     #endregion
 }
