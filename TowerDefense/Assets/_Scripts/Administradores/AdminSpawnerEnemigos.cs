@@ -68,7 +68,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         var indexElegido = HordaActual.IndexHorda[HordaActual.enemigosPorOleada - HordaActual.enemigosDuranteEstaOleada];
         var PrefabElegido = HordaActual.lstEnemigos[indexElegido].prefab;
         var obj = Instantiate<GameObject>(PrefabElegido, transform.position, Quaternion.identity);
-        obj.GetComponent<_Enemy>().objetivo = gameManager.referenciaObjetivo.gameObject;
+        //obj.GetComponent<_Enemy>().objetivo = gameManager.referenciaObjetivo.gameObject;
         HordaActual.enemigosDuranteEstaOleada--;
         if (HordaActual.enemigosDuranteEstaOleada <= 0)
         {
