@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
     #region Privados
     private AudioManager audioManager;
     public MathRNG mathRNG = new MathRNG(3241);
+    [HideInInspector] public int enemigosBaseDerrotados;
+    [HideInInspector] public int enemigosJefeDerrotados;
+    [HideInInspector] public int recursos;
+    [HideInInspector] public int RondaActual = 0;
+    [HideInInspector] public List<GameObject> EnemigosGenerados;
     #endregion
 
     #region Editor Variables
@@ -50,50 +55,50 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region EventHandlers
-    public event EventHandler OnGameStart;
-    public event EventHandler OnGamePause;
-    public event EventHandler OnGameResume;
-    public event EventHandler OnGameEnd;
-    public event EventHandler OnGameOver;
-    public event EventHandler OnGameExit;
-    public event EventHandler OnGameLevelCleared;
-    public event EventHandler OnRoundStart;
+    public delegate void GameEvent();
+    public event GameEvent OnGameStart;
+    public event GameEvent OnGamePause;
+    public event GameEvent OnGameResume;
+    public event GameEvent OnGameEnd;
+    public event GameEvent OnGameOver;
+    public event GameEvent OnGameExit;
+    public event GameEvent OnGameLevelCleared;
+    public event GameEvent OnWaveStart;
+    public event GameEvent OnWaveEnd;
+    public event GameEvent OnWaveWon;
+    public delegate void RecursosModificados();
+    public event RecursosModificados EnRecursosModificados;
     public void StartGame()
     {
-        _GameEnd = false;
-        OnGameStart?.Invoke(this, EventArgs.Empty);
+        OnGameStart();
     }
     public void PauseGame()
     {
-        GamePause = true;
-        OnGamePause?.Invoke(this, EventArgs.Empty);
+        OnGamePause();
     }
     public void ResumeGame()
     {
-        GamePause = false;
-        OnGameResume?.Invoke(this, EventArgs.Empty);
-    }
-    public void ExitGame()
-    {
-        OnGameExit?.Invoke(this, EventArgs.Empty);
-    }
-    public void LevelClearedGame()
-    {
-        LevelCleared = true;
-        OnGameLevelCleared?.Invoke(this, EventArgs.Empty);
-    }
-    public void GameOver()
-    {
-        OnGameOver?.Invoke(this, EventArgs.Empty);
+        OnGameResume();
     }
     public void GameEnd()
     {
-        _GameEnd = true;
-        OnGameEnd?.Invoke(this, EventArgs.Empty);
+        OnGameEnd();
     }
-    public void StartRound()
+    public void GameOver()
     {
-        OnRoundStart?.Invoke(this, EventArgs.Empty);
+        OnGameOver();
+    }
+    public void StartWave()
+    {
+        OnWaveStart();
+    }
+    public void EndWave()
+    {
+        OnWaveEnd();
+    }
+    public void WaveWon()
+    {
+        OnWaveWon();
     }
     #endregion
 
@@ -101,13 +106,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         CreateSingleton();
-        OnGameStart += delegate { Time.timeScale = 1; };
-        OnGamePause += delegate { Time.timeScale = 0; };
-        OnGameResume += delegate { Time.timeScale = 1; };
-        OnGameEnd += delegate { Time.timeScale = 0; };
-        OnGameOver += delegate { GameEnd(); };
-        OnGameLevelCleared += delegate { GameEnd(); };
-        OnGameExit += delegate { Time.timeScale = 1;};
+        OnGameStart += delegate { _GameEnd = false; ResetValores(); Time.timeScale = 1; };
+        OnGamePause += delegate { GamePause = true; Time.timeScale = 0; };
+        OnGameResume += delegate { GamePause = false; Time.timeScale = 1; };
+        OnGameEnd += delegate { _GameEnd = true; Time.timeScale = 0; };
+        OnGameOver += delegate { OnGameEnd(); };
+        OnGameLevelCleared += delegate { LevelCleared = true; OnGameEnd(); };
+        OnGameExit += delegate { Time.timeScale = 1; };
     }
     private void Start()
     {
@@ -118,8 +123,8 @@ public class GameManager : MonoBehaviour
             OnGameResume += delegate { audioManager.BGM.UnPause(); audioManager.SFX.UnPause(); };
             OnGameEnd += delegate { audioManager.BGM.Stop(); audioManager.SFX.Stop(); };
         }
-        StartGame();
-        Invoke("StartRound", 0.5f);
+        OnGameStart();
+        Invoke("StartWave", 0.5f);
     }
     private void Update()
     {
@@ -134,11 +139,12 @@ public class GameManager : MonoBehaviour
                 var lstSpawnersOlasFinalizadas = (from x in lstSpawners where !x.getOleadaFinalizada() select x).ToArray();
                 if (lstSpawnersOlasFinalizadas.Length > 0)
                 {
-                    StartRound();
+                    RondaActual++;
+                    OnWaveStart();
                 }
                 else
                 {
-                    LevelClearedGame();
+                    OnGameLevelCleared();
                 }
             }
         }
@@ -150,6 +156,23 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         referenciaObjetivo.EnObjetivoDestruido -= GameOver;
+    }
+    #endregion
+
+    #region General
+    public void ModificarRecursos(int modificacion)
+    {
+        recursos += modificacion;
+        if (EnRecursosModificados != null)
+        {
+            EnRecursosModificados();
+        }
+    }
+    public void ResetValores()
+    {
+        RondaActual = 0;
+        enemigosBaseDerrotados = 0;
+        enemigosJefeDerrotados = 0;
     }
     #endregion
 }

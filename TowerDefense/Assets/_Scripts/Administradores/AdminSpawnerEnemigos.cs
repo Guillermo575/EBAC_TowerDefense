@@ -9,10 +9,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region Variables
     private GameManager gameManager;
     private HordaEnemigos HordaActual;
-    private int oleada = 0;
     private bool OleadaFinalizada = false;
-    public delegate void OleadaTerminada();
-    public event OleadaTerminada EnOleadaTerminada;
     public List<HordaEnemigos> ConfigHorda;
     #endregion
 
@@ -25,18 +22,22 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     {
         return OleadaFinalizada;
     }
+    public bool getOleadaIniciada()
+    {
+        return !OleadaFinalizada;
+    }
     #endregion
 
     #region Start & Update
     void Start()
     {
+        gameManager = GameManager.GetManager();
+        gameManager.OnWaveStart += delegate { IniciarOla(); };
         foreach (var objHorda in ConfigHorda)
         {
             objHorda.Initialize();
         }
-        HordaActual = ConfigHorda[oleada];
-        gameManager = GameManager.GetManager();
-        gameManager.OnRoundStart += delegate { IniciarOla(); };
+        HordaActual = ConfigHorda[gameManager.RondaActual];
     }
     void Update()
     {
@@ -46,21 +47,14 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region General
     public void IniciarOla()
     {
-        if (oleada < ConfigHorda.Count && !OleadaFinalizada)
+        if (gameManager.RondaActual < ConfigHorda.Count && !OleadaFinalizada)
         {
-            HordaActual = ConfigHorda[oleada]; 
+            HordaActual = ConfigHorda[gameManager.RondaActual]; 
             InstanciarEnemigo();
         }
         else
         {
             OleadaFinalizada = true;
-        }
-    }
-    public void TerminarOla()
-    {
-        if (EnOleadaTerminada != null)
-        {
-            EnOleadaTerminada();
         }
     }
     public void InstanciarEnemigo()
@@ -72,12 +66,10 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         HordaActual.enemigosDuranteEstaOleada--;
         if (HordaActual.enemigosDuranteEstaOleada <= 0)
         {
-            oleada++;
-            if (oleada >= ConfigHorda.Count)
+            if (gameManager.RondaActual >= ConfigHorda.Count)
             {
                 OleadaFinalizada = true;
             }
-            TerminarOla();
             return;
         }
         var tiempoEspera = gameManager.mathRNG.GetRandom(HordaActual.TiempoEsperaSpawnMinimo, HordaActual.TiempoEsperaSpawnMaximo);

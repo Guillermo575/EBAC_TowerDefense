@@ -16,4 +16,9 @@ public class EnemyBoss : _Enemy
     {
         base.OnCollisionEnter(collision);
     }
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        gameManager.enemigosJefeDerrotados++;
+    }
 }
