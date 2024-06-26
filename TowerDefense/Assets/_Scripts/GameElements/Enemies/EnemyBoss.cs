@@ -19,6 +19,6 @@ public class EnemyBoss : _Enemy
     public override void OnDestroy()
     {
         base.OnDestroy();
-        gameManager.enemigosJefeDerrotados++;
+        gameManager.AddEnemigosJefeDerrotados();
     }
 }

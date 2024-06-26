@@ -31,11 +31,48 @@ public class GameManager : MonoBehaviour
     #region Privados
     private AudioManager audioManager;
     public MathRNG mathRNG = new MathRNG(3241);
-    [HideInInspector] public int enemigosBaseDerrotados;
-    [HideInInspector] public int enemigosJefeDerrotados;
-    [HideInInspector] public int recursos;
-    [HideInInspector] public int RondaActual = 0;
-    [HideInInspector] public List<GameObject> EnemigosGenerados;
+    private int enemigosBaseDerrotados;
+    private int enemigosJefeDerrotados;
+    private int recursos;
+    private int RondaActual = 0;
+    private int RondasTotales = 0;
+    private List<GameObject> EnemigosGenerados;
+    private GameState ActualGameState;
+    #endregion
+
+    #region Getters & Setters
+    public int GetRondaActual()
+    {
+        return RondaActual;
+    }
+    public int GetEnemigosBaseDerrotados()
+    {
+        return enemigosBaseDerrotados;
+    }
+    public int GetRecursos()
+    {
+        return recursos;
+    }
+    public void AddEnemigosBaseDerrotados(int incremento = 1)
+    {
+        enemigosBaseDerrotados += incremento;
+    }
+    public int GetEnemigosJefeDerrotados()
+    {
+        return enemigosJefeDerrotados;
+    }
+    public void AddEnemigosJefeDerrotados(int incremento = 1)
+    {
+        enemigosJefeDerrotados += incremento;
+    }
+    public GameState GetActualGameState()
+    {
+        return ActualGameState;
+    }
+    public bool RondaFinal()
+    {
+        return RondaActual == RondasTotales - 1;
+    }
     #endregion
 
     #region Editor Variables
@@ -54,6 +91,15 @@ public class GameManager : MonoBehaviour
     public bool IsGameActive { get { return !_GameEnd && !GamePause && !LevelCleared; } }
     #endregion
 
+    #region GameState
+    public enum GameState
+    {
+        Preparation = 0,
+        Action = 1,
+        Ended = 2,
+    }
+    #endregion
+
     #region EventHandlers
     public delegate void GameEvent();
     public event GameEvent OnGameStart;
@@ -63,42 +109,59 @@ public class GameManager : MonoBehaviour
     public event GameEvent OnGameOver;
     public event GameEvent OnGameExit;
     public event GameEvent OnGameLevelCleared;
+    public event GameEvent OnWavePreparation;
     public event GameEvent OnWaveStart;
     public event GameEvent OnWaveEnd;
-    public event GameEvent OnWaveWon;
     public delegate void RecursosModificados();
     public event RecursosModificados EnRecursosModificados;
     public void StartGame()
     {
+        _GameEnd = false;
+        ResetValores();
         OnGameStart();
     }
     public void PauseGame()
     {
+        GamePause = true;
         OnGamePause();
     }
     public void ResumeGame()
     {
+        GamePause = false;
         OnGameResume();
     }
     public void GameEnd()
     {
+        _GameEnd = true;
         OnGameEnd();
     }
     public void GameOver()
     {
         OnGameOver();
     }
+    public void GameLevelCleared()
+    {
+        LevelCleared = true;
+        OnGameLevelCleared();
+    }
+    public void WavePreparation()
+    {
+        ActualGameState = GameState.Preparation;
+        OnWavePreparation();
+    }
     public void StartWave()
     {
-        OnWaveStart();
+        if (ActualGameState == GameState.Preparation)
+        {
+            ActualGameState = GameState.Action;
+            OnWaveStart();
+        }
     }
     public void EndWave()
     {
+        ActualGameState = GameState.Ended;
         OnWaveEnd();
-    }
-    public void WaveWon()
-    {
-        OnWaveWon();
+        WavePreparation();
     }
     #endregion
 
@@ -106,13 +169,17 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         CreateSingleton();
-        OnGameStart += delegate { _GameEnd = false; ResetValores(); Time.timeScale = 1; };
-        OnGamePause += delegate { GamePause = true; Time.timeScale = 0; };
-        OnGameResume += delegate { GamePause = false; Time.timeScale = 1; };
-        OnGameEnd += delegate { _GameEnd = true; Time.timeScale = 0; };
+        OnGameStart += delegate { Time.timeScale = 1; };
+        OnGamePause += delegate { Time.timeScale = 0; };
+        OnGameResume += delegate { Time.timeScale = 1; };
+        OnGameEnd += delegate { Time.timeScale = 0; };
         OnGameOver += delegate { OnGameEnd(); };
-        OnGameLevelCleared += delegate { LevelCleared = true; OnGameEnd(); };
+        OnGameLevelCleared += delegate { OnGameEnd(); };
         OnGameExit += delegate { Time.timeScale = 1; };
+        OnWavePreparation += delegate { };
+        OnWaveStart += delegate { };
+        OnWaveEnd += delegate { };
+        EnRecursosModificados += delegate { };
     }
     private void Start()
     {
@@ -124,27 +191,34 @@ public class GameManager : MonoBehaviour
             OnGameEnd += delegate { audioManager.BGM.Stop(); audioManager.SFX.Stop(); };
         }
         OnGameStart();
-        Invoke("StartWave", 0.5f);
+        WavePreparation();
+        var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
+        var lstSpawnersCount = (from x in lstSpawners select x.getRondasTotales()).ToArray();
+        RondasTotales = lstSpawnersCount.Max(x => x);
+        //Invoke("StartWave", 0.5f);
     }
     private void Update()
     {
         if (IsGameEnd) return;
-        var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
-        if (lstEnemy.Length == 0)
+        if (ActualGameState == GameState.Action)
         {
-            var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
-            var lstSpawnersEnemigosPendientes = (from x in lstSpawners where x.getHordaActual() != null && x.getHordaActual().EnemigosPendientes select x).ToArray();
-            if (lstSpawnersEnemigosPendientes.Length == 0)
+            var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
+            if (lstEnemy.Length == 0)
             {
-                var lstSpawnersOlasFinalizadas = (from x in lstSpawners where !x.getOleadaFinalizada() select x).ToArray();
-                if (lstSpawnersOlasFinalizadas.Length > 0)
+                var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
+                var lstSpawnersEnemigosPendientes = (from x in lstSpawners where x.getHordaActual() != null && x.getHordaActual().EnemigosPendientes select x).ToArray();
+                if (lstSpawnersEnemigosPendientes.Length == 0)
                 {
-                    RondaActual++;
-                    OnWaveStart();
-                }
-                else
-                {
-                    OnGameLevelCleared();
+                    EndWave();
+                    var lstSpawnersOlasFinalizadas = (from x in lstSpawners where !x.getOleadaFinalizada() select x).ToArray();
+                    if (lstSpawnersOlasFinalizadas.Length > 0)
+                    {
+                        RondaActual++;
+                    }
+                    else
+                    {
+                        OnGameLevelCleared();
+                    }
                 }
             }
         }

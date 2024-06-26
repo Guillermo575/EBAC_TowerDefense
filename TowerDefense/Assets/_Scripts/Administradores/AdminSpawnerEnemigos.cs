@@ -10,6 +10,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     private GameManager gameManager;
     private HordaEnemigos HordaActual;
     private bool OleadaFinalizada = false;
+    private int RondasTotales = 0;
     public List<HordaEnemigos> ConfigHorda;
     #endregion
 
@@ -26,6 +27,10 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     {
         return !OleadaFinalizada;
     }
+    public int getRondasTotales()
+    {
+        return RondasTotales;
+    }
     #endregion
 
     #region Start & Update
@@ -36,8 +41,9 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         foreach (var objHorda in ConfigHorda)
         {
             objHorda.Initialize();
+            RondasTotales++;
         }
-        HordaActual = ConfigHorda[gameManager.RondaActual];
+        HordaActual = ConfigHorda[gameManager.GetRondaActual()];
     }
     void Update()
     {
@@ -47,9 +53,9 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region General
     public void IniciarOla()
     {
-        if (gameManager.RondaActual < ConfigHorda.Count && !OleadaFinalizada)
+        if (gameManager.GetRondaActual() < ConfigHorda.Count && !OleadaFinalizada)
         {
-            HordaActual = ConfigHorda[gameManager.RondaActual]; 
+            HordaActual = ConfigHorda[gameManager.GetRondaActual()]; 
             InstanciarEnemigo();
         }
         else
@@ -66,7 +72,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         HordaActual.enemigosDuranteEstaOleada--;
         if (HordaActual.enemigosDuranteEstaOleada <= 0)
         {
-            if (gameManager.RondaActual >= ConfigHorda.Count)
+            if (gameManager.GetRondaActual() >= ConfigHorda.Count)
             {
                 OleadaFinalizada = true;
             }

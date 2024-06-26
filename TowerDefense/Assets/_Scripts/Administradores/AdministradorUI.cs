@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,21 +8,50 @@ public class AdministradorUI : MonoBehaviour
 {
     private GameManager gameManager;
     public GameObject canvasPrincipal;
+    public GameObject canvasResultados;
+    public GameObject canvasOlaFinal;
+    public TextMeshProUGUI txtRecursos;
+    public TextMeshProUGUI txtOleada;
+    public TextMeshProUGUI txtEnemigosDerrotados;
+    public TextMeshProUGUI txtJefesDerrotados;
+
     void Start()
     {
         gameManager = GameManager.GetManager();
         gameManager.OnGameResume += delegate { canvasPrincipal.SetActive(true); };
         gameManager.OnGamePause += delegate { canvasPrincipal.SetActive(false); };
         gameManager.OnGameEnd += delegate { canvasPrincipal.SetActive(false); };
+        gameManager.OnWaveStart += delegate {
+            if (gameManager.RondaFinal())
+            {
+                MostrarCanvasOlaFinal(); 
+                Invoke("OcultarCanvasOlaFinal", 3f); 
+            }
+        };
+        gameManager.OnWaveEnd += delegate { MostrarCanvasResultados(); Invoke("OcultarCanvasResultados", 3f); };
     }
     void Update()
     {
+        txtOleada.text = $"Oleada: {gameManager.GetRondaActual() + 1}";
+        txtRecursos.text = $"Recursos: {gameManager.GetRecursos()}";
+        txtEnemigosDerrotados.text = $"Enemigos derrotados: {gameManager.GetEnemigosBaseDerrotados()}";
+        txtJefesDerrotados.text = $"Jefes derrotados: {gameManager.GetEnemigosJefeDerrotados()}";
     }
-    public void MostrarMenuFinOleada()
+    public void MostrarCanvasResultados()
     {
+        canvasResultados.SetActive(true);
     }
-    public void OcultarMenuFinOleada()
+    public void OcultarCanvasResultados()
     {
+        canvasResultados.SetActive(false);
+    }
+    public void MostrarCanvasOlaFinal()
+    {
+        canvasOlaFinal.SetActive(true);
+    }
+    public void OcultarCanvasOlaFinal()
+    {
+        canvasOlaFinal.SetActive(false);
     }
     public void AdministrarToogles(Toggle toggle)
     {
@@ -31,5 +61,9 @@ public class AdministradorUI : MonoBehaviour
             var obj = objToggle.GetComponent<Toggle>();
             obj.isOn = GameObject.ReferenceEquals(obj, toggle);
         }
+    }
+    public void IniciarOleada()
+    {
+        gameManager.StartWave();
     }
 }

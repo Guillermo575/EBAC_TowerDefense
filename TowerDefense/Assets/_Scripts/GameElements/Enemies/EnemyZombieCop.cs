@@ -21,6 +21,6 @@ public class EnemyZombieCop : _Enemy
     public override void OnDestroy()
     {
         base.OnDestroy();
-        gameManager.enemigosBaseDerrotados++;
+        gameManager.AddEnemigosBaseDerrotados();
     }
 }
