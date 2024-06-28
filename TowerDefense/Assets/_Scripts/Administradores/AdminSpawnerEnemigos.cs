@@ -8,28 +8,25 @@ public class AdminSpawnerEnemigos : MonoBehaviour
 {
     #region Variables
     private GameManager gameManager;
-    private HordaEnemigos HordaActual;
-    private bool OleadaFinalizada = false;
-    private int RondasTotales = 0;
     public List<HordaEnemigos> ConfigHorda;
     #endregion
 
     #region Getters
     public HordaEnemigos getHordaActual()
     {
-        return HordaActual;
-    }
-    public bool getOleadaFinalizada()
-    {
-        return OleadaFinalizada;
+        return ConfigHorda[gameManager.GetRondaActual()];
     }
     public bool getOleadaIniciada()
     {
-        return !OleadaFinalizada;
+        return !getOleadaFinalizada();
     }
     public int getRondasTotales()
     {
-        return RondasTotales;
+        return ConfigHorda.Count;
+    }
+    public bool getOleadaFinalizada()
+    {
+        return gameManager.RondaFinal() && getHordaActual().enemigosDuranteEstaOleada <= 0;
     }
     #endregion
 
@@ -41,9 +38,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         foreach (var objHorda in ConfigHorda)
         {
             objHorda.Initialize();
-            RondasTotales++;
         }
-        HordaActual = ConfigHorda[gameManager.GetRondaActual()];
     }
     void Update()
     {
@@ -53,18 +48,14 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region General
     public void IniciarOla()
     {
-        if (gameManager.GetRondaActual() < ConfigHorda.Count && !OleadaFinalizada)
+        if (!getOleadaFinalizada())
         {
-            HordaActual = ConfigHorda[gameManager.GetRondaActual()]; 
             InstanciarEnemigo();
-        }
-        else
-        {
-            OleadaFinalizada = true;
         }
     }
     public void InstanciarEnemigo()
     {
+        var HordaActual = getHordaActual();
         var indexElegido = HordaActual.IndexHorda[HordaActual.enemigosPorOleada - HordaActual.enemigosDuranteEstaOleada];
         var PrefabElegido = HordaActual.lstEnemigos[indexElegido].prefab;
         var obj = Instantiate<GameObject>(PrefabElegido, transform.position, Quaternion.identity);
@@ -72,10 +63,6 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         HordaActual.enemigosDuranteEstaOleada--;
         if (HordaActual.enemigosDuranteEstaOleada <= 0)
         {
-            if (gameManager.GetRondaActual() >= ConfigHorda.Count)
-            {
-                OleadaFinalizada = true;
-            }
             return;
         }
         var tiempoEspera = gameManager.mathRNG.GetRandom(HordaActual.TiempoEsperaSpawnMinimo, HordaActual.TiempoEsperaSpawnMaximo);

@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     }
     public bool RondaFinal()
     {
-        return RondaActual == RondasTotales - 1;
+        return RondaActual >= RondasTotales - 1;
     }
     #endregion
 
@@ -161,7 +161,6 @@ public class GameManager : MonoBehaviour
     {
         ActualGameState = GameState.Ended;
         OnWaveEnd();
-        WavePreparation();
     }
     #endregion
 
@@ -178,7 +177,7 @@ public class GameManager : MonoBehaviour
         OnGameExit += delegate { Time.timeScale = 1; };
         OnWavePreparation += delegate { };
         OnWaveStart += delegate { };
-        OnWaveEnd += delegate { };
+        OnWaveEnd += delegate { CheckEndWave(); };
         EnRecursosModificados += delegate { };
     }
     private void Start()
@@ -210,17 +209,22 @@ public class GameManager : MonoBehaviour
                 if (lstSpawnersEnemigosPendientes.Length == 0)
                 {
                     EndWave();
-                    var lstSpawnersOlasFinalizadas = (from x in lstSpawners where !x.getOleadaFinalizada() select x).ToArray();
-                    if (lstSpawnersOlasFinalizadas.Length > 0)
-                    {
-                        RondaActual++;
-                    }
-                    else
-                    {
-                        OnGameLevelCleared();
-                    }
                 }
             }
+        }
+    }
+    private void CheckEndWave()
+    {
+        var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
+        var lstSpawnersOlasFinalizadas = (from x in lstSpawners where !x.getOleadaFinalizada() select x).ToArray();
+        if (lstSpawnersOlasFinalizadas.Length > 0)
+        {
+            RondaActual++;
+            WavePreparation();
+        }
+        else
+        {
+            OnGameLevelCleared();
         }
     }
     private void OnEnable()
