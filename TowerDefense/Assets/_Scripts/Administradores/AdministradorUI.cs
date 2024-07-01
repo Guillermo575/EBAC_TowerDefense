@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static GameManager;
 public class AdministradorUI : MonoBehaviour
 {
     private GameManager gameManager;
@@ -20,7 +21,7 @@ public class AdministradorUI : MonoBehaviour
         gameManager = GameManager.GetManager();
         gameManager.OnGameResume += delegate { canvasPrincipal.SetActive(true); };
         gameManager.OnGamePause += delegate { canvasPrincipal.SetActive(false); };
-        gameManager.OnGameEnd += delegate { canvasPrincipal.SetActive(false); };
+        gameManager.OnGameEnd += delegate { canvasPrincipal.SetActive(false); OcultarCanvasResultados(); };
         gameManager.OnWaveStart += delegate {
             if (gameManager.RondaFinal())
             {
@@ -28,7 +29,8 @@ public class AdministradorUI : MonoBehaviour
                 Invoke("OcultarCanvasOlaFinal", 3f); 
             }
         };
-        gameManager.OnWaveEnd += delegate { MostrarCanvasResultados(); Invoke("OcultarCanvasResultados", 3f); };
+        gameManager.OnWavePreparation += delegate { OcultarCanvasResultados(); };
+        gameManager.OnWaveEnd += delegate { MostrarCanvasResultados(); };
     }
     void Update()
     {
@@ -64,6 +66,9 @@ public class AdministradorUI : MonoBehaviour
     }
     public void IniciarOleada()
     {
-        gameManager.StartWave();
+        if (gameManager.GetActualGameState() == GameState.Preparation)
+        {
+            gameManager.StartWave();
+        }
     }
 }

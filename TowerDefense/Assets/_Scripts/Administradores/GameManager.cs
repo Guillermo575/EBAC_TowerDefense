@@ -122,8 +122,11 @@ public class GameManager : MonoBehaviour
     }
     public void PauseGame()
     {
-        GamePause = true;
-        OnGamePause();
+        if (ActualGameState == GameState.Action)
+        {
+            GamePause = true;
+            OnGamePause();
+        }
     }
     public void ResumeGame()
     {
@@ -220,11 +223,11 @@ public class GameManager : MonoBehaviour
         if (lstSpawnersOlasFinalizadas.Length > 0)
         {
             RondaActual++;
-            WavePreparation();
+            Invoke("WavePreparation", 3f);
         }
         else
         {
-            OnGameLevelCleared();
+            Invoke("GameLevelCleared", 3f);
         }
     }
     private void OnEnable()
