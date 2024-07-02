@@ -14,6 +14,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region Getters
     public HordaEnemigos getHordaActual()
     {
+        if (gameManager.GetRondaActual() >= ConfigHorda.Count) return null;
         return ConfigHorda[gameManager.GetRondaActual()];
     }
     public bool getOleadaIniciada()
@@ -26,6 +27,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     }
     public bool getOleadaFinalizada()
     {
+        if(getHordaActual() == null) return false;
         return gameManager.RondaFinal() && getHordaActual().enemigosDuranteEstaOleada <= 0;
     }
     #endregion
@@ -56,6 +58,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     public void InstanciarEnemigo()
     {
         var HordaActual = getHordaActual();
+        if (HordaActual.IndexHorda.Length <= 0) return;
         var indexElegido = HordaActual.IndexHorda[HordaActual.enemigosPorOleada - HordaActual.enemigosDuranteEstaOleada];
         var PrefabElegido = HordaActual.lstEnemigos[indexElegido].prefab;
         var obj = Instantiate<GameObject>(PrefabElegido, transform.position, Quaternion.identity);
