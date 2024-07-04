@@ -52,8 +52,22 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     {
         if (!getOleadaFinalizada())
         {
-            InstanciarEnemigo();
+            //InstanciarEnemigo();
+            StartCoroutine(CourutineSpawn());
         }
+    }
+    IEnumerator CourutineSpawn()
+    {
+        var HordaActual = getHordaActual();
+        foreach (var indexElegido in HordaActual.IndexHorda)
+        {
+            var tiempoEspera = gameManager.mathRNG.GetRandom(HordaActual.TiempoEsperaSpawnMinimo, HordaActual.TiempoEsperaSpawnMaximo);
+            yield return new WaitForSeconds(tiempoEspera);
+            var PrefabElegido = HordaActual.lstEnemigos[indexElegido].prefab;
+            var obj = Instantiate<GameObject>(PrefabElegido, transform.position, Quaternion.identity);
+            HordaActual.enemigosDuranteEstaOleada--;
+        }
+        yield return new WaitForSeconds(0.1f);
     }
     public void InstanciarEnemigo()
     {
