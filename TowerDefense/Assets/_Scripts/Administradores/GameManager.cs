@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private int RondasTotales = 0;
     private List<GameObject> EnemigosGenerados;
     private GameState ActualGameState;
+    private AdminSpawnerEnemigos[] lstSpawners;
     #endregion
 
     #region Getters & Setters
@@ -72,6 +73,10 @@ public class GameManager : MonoBehaviour
     public bool RondaFinal()
     {
         return RondaActual >= RondasTotales - 1;
+    }
+    public AdminSpawnerEnemigos[] getSpawners()
+    {
+        return lstSpawners;
     }
     #endregion
 
@@ -170,7 +175,6 @@ public class GameManager : MonoBehaviour
     #region Awake, Start & Update
     private void Awake()
     {
-        CreateSingleton();
         OnGameStart += delegate { Time.timeScale = 1; };
         OnGamePause += delegate { Time.timeScale = 0; };
         OnGameResume += delegate { Time.timeScale = 1; };
@@ -182,6 +186,9 @@ public class GameManager : MonoBehaviour
         OnWaveStart += delegate { };
         OnWaveEnd += delegate { CheckEndWave(); };
         EnRecursosModificados += delegate { };
+        lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
+        var lstSpawnersCount = (from x in lstSpawners select x.getRondasTotales()).ToArray();
+        RondasTotales = lstSpawnersCount.Max(x => x);
     }
     private void Start()
     {
@@ -194,9 +201,6 @@ public class GameManager : MonoBehaviour
         }
         OnGameStart();
         WavePreparation();
-        var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
-        var lstSpawnersCount = (from x in lstSpawners select x.getRondasTotales()).ToArray();
-        RondasTotales = lstSpawnersCount.Max(x => x);
         //Invoke("StartWave", 0.5f);
     }
     private void Update()
@@ -207,7 +211,6 @@ public class GameManager : MonoBehaviour
             var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
             if (lstEnemy.Length == 0)
             {
-                var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
                 var lstSpawnersEnemigosPendientes = (from x in lstSpawners where x.getHordaActual() != null && x.getHordaActual().EnemigosPendientes select x).ToArray();
                 if (lstSpawnersEnemigosPendientes.Length == 0)
                 {
@@ -218,7 +221,6 @@ public class GameManager : MonoBehaviour
     }
     private void CheckEndWave()
     {
-        var lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
         var lstSpawnersOlasFinalizadas = (from x in lstSpawners where !x.getOleadaFinalizada() select x).ToArray();
         if (lstSpawnersOlasFinalizadas.Length > 0)
         {
@@ -232,6 +234,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
+        CreateSingleton();
         referenciaObjetivo.EnObjetivoDestruido += GameOver;
     }
     private void OnDisable()

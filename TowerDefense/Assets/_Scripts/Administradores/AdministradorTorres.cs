@@ -5,12 +5,18 @@ using UnityEngine;
 public class AdministradorTorres : MonoBehaviour
 {
     private AdministradorToques referenciaAdminToques;
+    private GameManager gameManager;
+    public AdminSpawnerEnemigos[] referenciaSpawners;
+    public GameObject Objetivo;
     public enum TorreSeleccionada
     {
         Torre1,Torrre2,Torre3,Torre4,Torre5,
     }
     public TorreSeleccionada torreSeleccionada;
     public List<GameObject> prefabTorres;
+    public List<GameObject> lstTorresInstanciadas;
+    public delegate void EnemigoObjetivoActualizado();
+    public event EnemigoObjetivoActualizado EnEnemigoObjetivoActualizado;
 
     private void OnEnable()
     {
@@ -25,6 +31,8 @@ public class AdministradorTorres : MonoBehaviour
     }
     void Start()
     {
+        gameManager = GameManager.GetManager();
+        referenciaSpawners = gameManager.getSpawners();
         referenciaAdminToques = AdministradorToques.GetManager();
         referenciaAdminToques.EnPlataformaTocada += CrearTorre;
     }
