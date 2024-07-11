@@ -189,6 +189,7 @@ public class GameManager : MonoBehaviour
         lstSpawners = GameObject.FindObjectsByType<AdminSpawnerEnemigos>(FindObjectsSortMode.InstanceID);
         var lstSpawnersCount = (from x in lstSpawners select x.getRondasTotales()).ToArray();
         RondasTotales = lstSpawnersCount.Max(x => x);
+        EnemigosGenerados = new List<GameObject>();
     }
     private void Start()
     {
