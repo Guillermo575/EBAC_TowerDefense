@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     public MathRNG mathRNG = new MathRNG(3241);
     private int enemigosBaseDerrotados;
     private int enemigosJefeDerrotados;
-    private int recursos;
     private int RondaActual = 0;
     private int RondasTotales = 0;
     private List<GameObject> EnemigosGenerados;
@@ -82,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     #region Editor Variables
     public SceneObjective referenciaObjetivo;
+    public int recursos = 800;
     #endregion
 
     #region Level Game Variables

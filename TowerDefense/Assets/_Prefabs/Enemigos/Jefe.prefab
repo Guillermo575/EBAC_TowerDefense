@@ -376,6 +376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jefe
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90caaaf8b1874224eaeaba71edc60d78, type: 3}
+      propertyPath: m_TagString
+      value: Enemigo
+      objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: 90caaaf8b1874224eaeaba71edc60d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 9.557521
@@ -729,9 +733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42dab172becd1e24985c402cf88ced97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 0}
   vida: 100
   damage: 40
+  recursosGanados: 200
 --- !u!54 &-80664246663957768
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class _Tower : MonoBehaviour
     public _Enemy enemigo;
     public GameObject prefabbala;
     public List<GameObject> puntasCanon;
+    public int CostoInstalacion = 300;
     void Start()
     {
     }

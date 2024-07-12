@@ -33,34 +33,38 @@ public class AdministradorTorres : MonoBehaviour
     //}
     private void ActualizarObjetivo()
     {
-        if (gameManager.GetActualGameState() == GameManager.GameState.Action)
+        float distanciaMasCorta = float.MaxValue;
+        _Enemy enemigoMasCercano = null;
+        var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
+        foreach (var enemigo in lstEnemy)
         {
-            float distanciaMasCorta = float.MaxValue;
-            _Enemy enemigoMasCercano = null;
-            var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
-            foreach (var enemigo in lstEnemy)
+            float dist = Vector3.Distance(enemigo.transform.position, Objetivo.transform.position);
+            if (dist < distanciaMasCorta)
             {
-                float dist = Vector3.Distance(enemigo.transform.position, Objetivo.transform.position);
-                if (dist < distanciaMasCorta)
-                {
-                    distanciaMasCorta = dist;
-                    enemigoMasCercano = enemigo;
-                }
-            }
-            if (enemigoMasCercano != null)
-            {
-                foreach (GameObject torre in lstTorresInstanciadas)
-                {
-                    torre.GetComponent<_Tower>().enemigo = enemigoMasCercano;
-                    torre.GetComponent<_Tower>().Disparar();
-                }
-                if (EnEnemigoObjetivoActualizado != null)
-                {
-                    EnEnemigoObjetivoActualizado();
-                }
+                distanciaMasCorta = dist;
+                enemigoMasCercano = enemigo;
             }
         }
-        Invoke("ActualizarObjetivo", 3);
+        if (enemigoMasCercano != null)
+        {
+            foreach (GameObject torre in lstTorresInstanciadas)
+            {
+                torre.GetComponent<_Tower>().enemigo = enemigoMasCercano;
+                torre.GetComponent<_Tower>().Disparar();
+            }
+            if (EnEnemigoObjetivoActualizado != null)
+            {
+                EnEnemigoObjetivoActualizado();
+            }
+        }
+    }
+    IEnumerator CourutineActualizarObjetivo()
+    {
+        while (gameManager.GetActualGameState() == GameManager.GameState.Action)
+        {
+            ActualizarObjetivo();
+            yield return new WaitForSeconds(3);
+        }
     }
     void Start()
     {
@@ -68,7 +72,7 @@ public class AdministradorTorres : MonoBehaviour
         referenciaSpawners = gameManager.getSpawners();
         referenciaAdminToques = AdministradorToques.GetManager();
         referenciaAdminToques.EnPlataformaTocada += CrearTorre;
-        gameManager.OnWaveStart += ActualizarObjetivo;
+        gameManager.OnWaveStart += delegate { StartCoroutine(CourutineActualizarObjetivo()); };
         lstTorresInstanciadas = new List<GameObject>();
     }
     void Update()
@@ -76,13 +80,15 @@ public class AdministradorTorres : MonoBehaviour
     }
     void CrearTorre(GameObject plataforma)
     {
-        if (plataforma.transform.childCount == 0)
+        int indiceTorre = (int)torreSeleccionada;
+        var prefabTorre = prefabTorres[indiceTorre].GetComponent<_Tower>();
+        if (plataforma.transform.childCount == 0 && gameManager.GetRecursos() > prefabTorre.CostoInstalacion)
         {
+            gameManager.ModificarRecursos(-prefabTorre.CostoInstalacion);
             Debug.Log("Creando Torre");
-            int indiceTorre = (int)torreSeleccionada;
             Vector3 posparaInstanciar = plataforma.transform.position;
             posparaInstanciar.y += 1f;
-            GameObject torreInstanciada = Instantiate<GameObject>(prefabTorres[indiceTorre], posparaInstanciar, Quaternion.identity);
+            GameObject torreInstanciada = Instantiate<GameObject>(prefabTorre.gameObject, posparaInstanciar, Quaternion.identity);
             torreInstanciada.transform.SetParent(plataforma.transform);
             lstTorresInstanciadas.Add(torreInstanciada);
         }

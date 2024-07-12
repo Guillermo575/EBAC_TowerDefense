@@ -67,7 +67,6 @@ public class AdminSpawnerEnemigos : MonoBehaviour
             var obj = Instantiate<GameObject>(PrefabElegido, transform.position, Quaternion.identity);
             HordaActual.enemigosDuranteEstaOleada--;
         }
-        yield return new WaitForSeconds(0.1f);
     }
     public void InstanciarEnemigo()
     {
