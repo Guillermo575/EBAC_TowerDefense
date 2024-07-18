@@ -9,6 +9,8 @@ TagManager:
   - ToggleTorre
   - Enemigo
   - Proyectil
+  - Bala
+  - Suelo
   layers:
   - Default
   - TransparentFX
