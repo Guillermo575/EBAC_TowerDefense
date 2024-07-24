@@ -188,10 +188,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b61619e86663ab42bc992b81d490183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   enemigo: {fileID: 0}
   prefabbala: {fileID: 7346964461897701355, guid: 9b1744b5539e8e74786a9f31ae2c3fad, type: 3}
   puntasCanon:
   - {fileID: 26094182426673469}
+  CostoInstalacion: 300
+  TiempoCadencia: 1
+  DistanciaRango: 30
 --- !u!1 &1506013803503912269
 GameObject:
   m_ObjectHideFlags: 0

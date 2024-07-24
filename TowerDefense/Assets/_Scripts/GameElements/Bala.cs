@@ -28,6 +28,10 @@ public class Bala : MonoBehaviour, IAtacante
             MakeDamage(damage);
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == "Suelo" || collision.gameObject.tag == "Plataforma")
+        {
+            Destroy(gameObject);
+        }
     }
     public void MakeDamage(int damage = 0)
     {

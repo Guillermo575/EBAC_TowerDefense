@@ -8,11 +8,15 @@ public class TowerAntena : _Tower, IAtacante
     private LineRenderer LRRayo;
     public List<Vector3> puntos;
     public int potenciaRayo;
+    public float DuracionDisparo = 1f;
     public MathRNG mathRNG = new MathRNG(1121);
+    private bool TimeToStopThis = false;
+    private bool ShootStoped = false;
     #endregion
 
-    public void Start()
+    public override void Start()
     {
+        base.Start();
         LRRayo = GetComponent<LineRenderer>();
     }
     private void FixedUpdate()
@@ -20,7 +24,6 @@ public class TowerAntena : _Tower, IAtacante
         if (enemigo != null)
         {
             Disparar();
-            MakeDamage(potenciaRayo);
         }
         else
         {
@@ -30,13 +33,32 @@ public class TowerAntena : _Tower, IAtacante
 
     public override void Disparar()
     {
-        puntos = ObtenerPuntos();
-        puntos.Insert(0, puntasCanon[0].transform.position);
-        var posEnemigo = enemigo.transform.position;
-        posEnemigo.y += 1;
-        puntos.Add(posEnemigo);
-        LRRayo.positionCount = puntos.Count;
-        LRRayo.SetPositions(puntos.ToArray());
+        if (!TimeToStopThis)
+        {
+            TimeToStopThis = true;
+            StartCoroutine(CourutineDetenerDisparo());
+        }
+        if (!ShootStoped)
+        {
+            puntos = ObtenerPuntos();
+            puntos.Insert(0, puntasCanon[0].transform.position);
+            var posEnemigo = enemigo.transform.position;
+            posEnemigo.y += 1;
+            puntos.Add(posEnemigo);
+            LRRayo.positionCount = puntos.Count;
+            LRRayo.SetPositions(puntos.ToArray());
+            MakeDamage(potenciaRayo);
+        }
+    }
+
+    IEnumerator CourutineDetenerDisparo()
+    {
+        yield return new WaitForSeconds(DuracionDisparo);
+        TimeToStopThis = false;
+        ShootStoped = true;
+        enemigo = null;
+        yield return new WaitForSeconds(TiempoCadencia);
+        ShootStoped = false;
     }
 
     private List<Vector3> ObtenerPuntos()

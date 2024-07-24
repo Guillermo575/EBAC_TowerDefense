@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
@@ -11,35 +13,49 @@ public class TowerCanon : _Tower
     }
     public void ShotBullet()
     {
-        var rotacion = ObtenerAngulo(enemigo.transform.position - transform.position, 20);
-        Vector3 v = new Vector3(rotacion, 90, 0.0f);
-        Vector3 direccionDisparo = transform.rotation.eulerAngles;
-        direccionDisparo.y = 90 - direccionDisparo.x;
+        var ang = CalculateProjectileVelocity(transform.position, enemigo.transform.position, 20f);
         GameObject temp = Instantiate(prefabbala.gameObject, puntasCanon[0].transform.position, transform.rotation);
         Rigidbody tempRB = temp.GetComponent<Rigidbody>();
-        tempRB.velocity = direccionDisparo.normalized * 20;
+        tempRB.velocity = CalculateVelocity(enemigo.transform.position, puntasCanon[0].transform.position, 45f);
+        //tempRB.velocity = ang;
     }
-    private float ObtenerAngulo(Vector3 Destino, float v, float g = 9.8f)
+    public Vector3 CalculateVelocity(Vector3 targetPosition, Vector3 cannonPosition, float angle)
     {
-        float g2 = g / 2;
-        float t = v / g2;
-        float senXcos = (Destino.x * g2) / Mathf.Pow(v, 2);
-        float ang = Mathf.Asin(senXcos * 2) / 2;
-        ang = ang * (180 / Mathf.PI);
-        return ang;
+        float gravity = Physics.gravity.y/2;
+        float targetDistance = Vector3.Distance(targetPosition, cannonPosition);
+        float velocity = Mathf.Sqrt(targetDistance * -gravity / (Mathf.Sin(2 * angle * Mathf.Deg2Rad)));
+        Vector3 direction = (targetPosition - cannonPosition).normalized;
+        Vector3 velocityVector = velocity * direction;
+        velocityVector.y = velocity * Mathf.Sin(angle * Mathf.Deg2Rad);
+        return velocityVector;
     }
-    private float ObtenerAngulo2(Vector3 Origen, Vector3 Destino, float v, float g = 9.8f)
+    public Vector3 CalculateProjectileVelocity(Vector3 cannonPosition, Vector3 enemyPosition, float projectileVelocity)
     {
-        float g2 = g / 2;
-        float t = g2 * (Mathf.Pow(Destino.x, 2) / Mathf.Pow(v, 2));
-        float tgx2 = -t;
-        float tgx = Destino.x;
-        float tg = -t + (Origen.y - Destino.y);
-        var tcpSqrt = Mathf.Sqrt(Mathf.Pow(tgx, 2) - (4 * (tgx2 * tg)));
-        var tcp = (-tgx + tcpSqrt) / (2 * tgx2);
-        var tcp2 = (-tgx - tcpSqrt) / (2 * tgx2);
-        float ang = Mathf.Asin(tcp);
-        ang = ang * (180 / Mathf.PI);
-        return ang;
+        float g = Physics.gravity.y;
+        float deltaX = enemyPosition.x - cannonPosition.x;
+        float deltaY = enemyPosition.y - cannonPosition.y;
+        float distance = Mathf.Sqrt(Mathf.Pow(deltaX, 2) + Mathf.Pow(deltaY, 2));
+        if (distance <= 0)
+            return Vector3.zero;
+
+        // Usamos la fórmula para calcular el ángulo
+        // theta = atan((v^2 + sqrt(v^4 - g(gx^2 + v^2y^2))) / (gx))
+        float vSquared = Mathf.Pow(projectileVelocity, 2);
+        float discriminant = Mathf.Pow(vSquared, 2) - g * (g * (deltaX * deltaX) + 2 * deltaY * vSquared);
+        if (discriminant < 0)
+            return Vector3.zero;
+
+        float angle = Mathf.Atan((vSquared + Mathf.Sqrt(discriminant)) / (g * deltaX));
+        Vector3 velocity = new Vector3(deltaX, 0, deltaY).normalized; // Normalizar para obtener la dirección
+        velocity = Quaternion.Euler(0, angle * Mathf.Rad2Deg, 0) * velocity; // Aplicar rotación para dirección
+
+        // Calcular la velocidad total considerando la velocidad en Y
+        float verticalVelocity = projectileVelocity * Mathf.Sin(angle);
+        float horizontalVelocity = projectileVelocity * Mathf.Cos(angle);
+
+        // Crear el Vector3 como velocidad en X, Y, Z
+        Vector3 finalVelocity = new Vector3(horizontalVelocity, verticalVelocity, horizontalVelocity) * velocity.magnitude;
+
+        return finalVelocity;
     }
 }

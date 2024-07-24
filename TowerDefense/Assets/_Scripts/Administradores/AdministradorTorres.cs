@@ -16,7 +16,6 @@ public class AdministradorTorres : MonoBehaviour
     public List<GameObject> prefabTorres;
     private List<GameObject> lstTorresInstanciadas;
     public delegate void EnemigoObjetivoActualizado();
-    public event EnemigoObjetivoActualizado EnEnemigoObjetivoActualizado;
 
     //private void OnEnable()
     //{
@@ -31,48 +30,12 @@ public class AdministradorTorres : MonoBehaviour
     //    referenciaAdminToques.EnPlataformaTocada -= CrearTorre;
     //    gameManager.OnWaveStart -= ActualizarObjetivo;
     //}
-    private void ActualizarObjetivo()
-    {
-        float distanciaMasCorta = float.MaxValue;
-        _Enemy enemigoMasCercano = null;
-        var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
-        foreach (var enemigo in lstEnemy)
-        {
-            float dist = Vector3.Distance(enemigo.transform.position, Objetivo.transform.position);
-            if (dist < distanciaMasCorta)
-            {
-                distanciaMasCorta = dist;
-                enemigoMasCercano = enemigo;
-            }
-        }
-        if (enemigoMasCercano != null)
-        {
-            foreach (GameObject torre in lstTorresInstanciadas)
-            {
-                torre.GetComponent<_Tower>().enemigo = enemigoMasCercano;
-                torre.GetComponent<_Tower>().Disparar();
-            }
-            if (EnEnemigoObjetivoActualizado != null)
-            {
-                EnEnemigoObjetivoActualizado();
-            }
-        }
-    }
-    IEnumerator CourutineActualizarObjetivo()
-    {
-        while (gameManager.GetActualGameState() == GameManager.GameState.Action)
-        {
-            ActualizarObjetivo();
-            yield return new WaitForSeconds(3);
-        }
-    }
     void Start()
     {
         gameManager = GameManager.GetManager();
         referenciaSpawners = gameManager.getSpawners();
         referenciaAdminToques = AdministradorToques.GetManager();
         referenciaAdminToques.EnPlataformaTocada += CrearTorre;
-        gameManager.OnWaveStart += delegate { StartCoroutine(CourutineActualizarObjetivo()); };
         lstTorresInstanciadas = new List<GameObject>();
     }
     void Update()
