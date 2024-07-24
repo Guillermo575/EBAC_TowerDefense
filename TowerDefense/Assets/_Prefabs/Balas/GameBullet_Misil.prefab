@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5889286480068707499}
   - component: {fileID: 7570731834442390866}
   - component: {fileID: 8576003249968898835}
-  - component: {fileID: 362096158304865859}
   m_Layer: 0
   m_Name: GameBullet_Misil
   m_TagString: Untagged
@@ -677,19 +676,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &362096158304865859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829724543157138484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda5d33750a7e48459523f2489baa95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destino: {x: 0, y: 0, z: 0}
-  velocidad: 20
-  enemigo: {fileID: 0}
-  damage: 10
