@@ -34,6 +34,7 @@ public class _Tower : MonoBehaviour
         foreach(GameObject punta in puntasCanon)
         {
             var tempBala = Instantiate<GameObject>(prefabbala, punta.transform.position, Quaternion.identity);
+            tempBala.transform.LookAt(enemigo.transform);
             tempBala.GetComponent<Bala>().destino = enemigo.transform.position;
         }
     }

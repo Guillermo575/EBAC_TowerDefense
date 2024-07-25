@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8746580327016690495}
   - component: {fileID: 9057436127383477721}
   - component: {fileID: 987221261487045635}
-  - component: {fileID: 5992227041213390999}
   - component: {fileID: 8837138817375042653}
+  - component: {fileID: 5992227041213390999}
   m_Layer: 9
   m_Name: GameBullet
   m_TagString: Proyectil
@@ -109,22 +109,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5992227041213390999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346964461897701355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1209fd185ebb542804e11a2f139b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destino: {x: 0, y: 0, z: 0}
-  velocidad: 30
-  enemigo: {fileID: 0}
-  damage: 10
 --- !u!54 &8837138817375042653
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,3 +136,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5992227041213390999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7346964461897701355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1209fd185ebb542804e11a2f139b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destino: {x: 0, y: 0, z: 0}
+  velocidad: 30
+  enemigo: {fileID: 0}
+  damage: 10

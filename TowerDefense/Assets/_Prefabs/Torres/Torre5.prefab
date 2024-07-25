@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   enemigo: {fileID: 0}
-  prefabbala: {fileID: 1829724543157138484, guid: 7a0c1c2c7c99b01419d1a711f350cc34, type: 3}
+  prefabbala: {fileID: 5879400756404253402, guid: 7a0c1c2c7c99b01419d1a711f350cc34, type: 3}
   puntasCanon:
   - {fileID: 5719728243386129459}
   CostoInstalacion: 300

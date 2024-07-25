@@ -65,6 +65,9 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
     }
     public void Death()
     {
+        var getIsDead = animator.GetBool("IsDead");
+        if (getIsDead) return;
+        animator.SetBool("IsDead", true);
         animator.SetTrigger("OnDeath");
         GetComponent<NavMeshAgent>().SetDestination(transform.position);
         Destroy(gameObject, 3);
