@@ -824,7 +824,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8261680762319522853}
         m_TargetAssemblyTypeName: _Enemy, Assembly-CSharp
         m_MethodName: MakeDamage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
