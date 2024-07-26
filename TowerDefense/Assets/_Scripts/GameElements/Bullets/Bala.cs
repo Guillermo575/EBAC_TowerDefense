@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BalaCanon : MonoBehaviour, IAtacante
+public class Bala : _DamageElement
 {
-    public Vector3 destino;
-    public float velocidad = 20;
-    public GameObject enemigo;
-    public int damage = 10;
+    void Start()
+    {
+        destino.y += 1;
+    }
     void Update()
     {
-        bool sleeping = GetComponent<Rigidbody>().IsSleeping();
-        if (sleeping)
+        var paso = velocidad * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, destino, paso);
+        if (Vector3.Distance(transform.position, destino) <0.01f)
         {
             Destroy(gameObject);
         }
@@ -28,9 +28,5 @@ public class BalaCanon : MonoBehaviour, IAtacante
         {
             Destroy(gameObject);
         }
-    }
-    public void MakeDamage(int damage = 0)
-    {
-        enemigo.GetComponent<_Enemy>().ReceiveDamage(damage);
     }
 }

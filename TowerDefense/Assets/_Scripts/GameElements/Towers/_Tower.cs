@@ -13,10 +13,12 @@ public class _Tower : MonoBehaviour
     public int CostoInstalacion = 300;
     public float TiempoCadencia = 3f;
     public float DistanciaRango = 5f;
+    private bool TorreActivada = false;
     public virtual void Start()
     {
         gameManager = GameManager.GetManager();
-        gameManager.OnWaveStart += delegate { StartCoroutine(CourutineActualizarObjetivo()); };
+        gameManager.OnWaveStart += delegate { IniciarRutinaObjetivo(); };
+        IniciarRutinaObjetivo();
     }
     void Update()
     {
@@ -62,12 +64,22 @@ public class _Tower : MonoBehaviour
             }
         }
     }
+    public void IniciarRutinaObjetivo()
+    {
+        if (TorreActivada) return;
+        if (gameManager.GetActualGameState() == GameManager.GameState.Action)
+        {
+            StartCoroutine(CourutineActualizarObjetivo());
+        }
+    }
     IEnumerator CourutineActualizarObjetivo()
     {
+        TorreActivada = true;
         while (gameManager.GetActualGameState() == GameManager.GameState.Action)
         {
             ActualizarObjetivo();
             yield return new WaitForSeconds(TiempoCadencia);
         }
+        TorreActivada = false;
     }
 }

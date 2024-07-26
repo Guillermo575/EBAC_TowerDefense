@@ -13,11 +13,17 @@ public class TowerCanon : _Tower
     }
     public void ShotBullet()
     {
-        var ang = CalculateProjectileVelocity(transform.position, enemigo.transform.position, 20f);
+        //var ang = CalculateProjectileVelocity(transform.position, enemigo.transform.position, 20f);
         GameObject temp = Instantiate(prefabbala.gameObject, puntasCanon[0].transform.position, transform.rotation);
+        temp.transform.LookAt(enemigo.transform);
+        var ang = CalculateLaunchAngle(transform.position, enemigo.transform.position, 20f);
+        Vector3 angv3 = new Vector3();
+        angv3.x = temp.transform.rotation.x;
+        angv3.y = ang;
+        angv3.z = temp.transform.rotation.z;
         Rigidbody tempRB = temp.GetComponent<Rigidbody>();
-        tempRB.velocity = CalculateVelocity(enemigo.transform.position, puntasCanon[0].transform.position, 45f);
-        //tempRB.velocity = ang;
+        //tempRB.velocity = CalculateVelocity(enemigo.transform.position, puntasCanon[0].transform.position, 45f);
+        tempRB.velocity = new Vector3(20f, 0f, 20f);
     }
     public Vector3 CalculateVelocity(Vector3 targetPosition, Vector3 cannonPosition, float angle)
     {
@@ -57,5 +63,40 @@ public class TowerCanon : _Tower
         Vector3 finalVelocity = new Vector3(horizontalVelocity, verticalVelocity, horizontalVelocity) * velocity.magnitude;
 
         return finalVelocity;
+    }
+    // Método para calcular el ángulo de lanzamiento
+    public float CalculateLaunchAngle(Vector3 cannonPosition, Vector3 enemyPosition, float projectileSpeed)
+    {
+        // Gravedad
+        float g = Physics.gravity.y; // En Unity, la gravedad se toma en negativo
+
+        // Vector entre el cañón y el enemigo
+        Vector3 deltaPosition = enemyPosition - cannonPosition;
+        float dx = deltaPosition.x; // Distancia horizontal
+        float dy = deltaPosition.y; // Distancia vertical
+
+        // No se puede calcular si la distancia es cero
+        if (dx <= 0)
+        {
+            Debug.LogWarning("La distancia horizontal debe ser mayor que cero.");
+            return 0f;
+        }
+
+        // Aplicamos la fórmula para calcular el ángulo
+        float angle = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg; // Convertimos a grados
+
+        // Resolvemos la ecuación para obtener el ángulo de lanzamiento
+        float v2 = projectileSpeed * projectileSpeed;
+
+        float discriminant = v2 * v2 - g * (g * dx * dx + 2 * dy * v2);
+        if (discriminant < 0)
+        {
+            Debug.LogWarning("No es posible alcanzar el objetivo con la velocidad dada.");
+            return 0f;
+        }
+        float theta1 = Mathf.Atan((v2 + Mathf.Sqrt(discriminant)) / (g * dx));
+        float theta2 = Mathf.Atan((v2 - Mathf.Sqrt(discriminant)) / (g * dx));
+        angle = theta1 * Mathf.Rad2Deg;
+        return theta1;
     }
 }
