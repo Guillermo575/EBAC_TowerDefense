@@ -7,6 +7,10 @@ TagManager:
   - Objetivo
   - Plataforma
   - ToggleTorre
+  - Enemigo
+  - Proyectil
+  - Bala
+  - Suelo
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Proyectil
   - 
   - 
   - 

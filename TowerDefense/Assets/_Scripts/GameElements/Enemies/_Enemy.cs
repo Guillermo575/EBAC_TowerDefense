@@ -4,14 +4,17 @@ using UnityEngine;
 using UnityEngine.AI;
 public class _Enemy : MonoBehaviour, IAtacante, IAtacable
 {
-    public GameObject objetivo;
+    internal Animator animator;
     internal int vidaMaxima = 100;
+    internal GameManager gameManager;
+    private GameObject objetivo;
     public int vida = 100;
     public int damage = 40;
-    internal Animator animator;
+    public int recursosGanados = 200;
     private void OnEnable()
     {
-        objetivo = GameObject.Find("Objetivo");
+        gameManager = GameManager.GetManager();
+        objetivo = gameManager.referenciaObjetivo.gameObject;
         objetivo.GetComponent<SceneObjective>().EnObjetivoDestruido += Detener;
     }
     private void OnDisable()
@@ -38,6 +41,10 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
             Death();
         }
     }
+    public virtual void OnDestroy()
+    {
+        gameManager.ModificarRecursos(recursosGanados);
+    }
     internal virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Objetivo")
@@ -58,6 +65,9 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
     }
     public void Death()
     {
+        var getIsDead = animator.GetBool("IsDead");
+        if (getIsDead) return;
+        animator.SetBool("IsDead", true);
         animator.SetTrigger("OnDeath");
         GetComponent<NavMeshAgent>().SetDestination(transform.position);
         Destroy(gameObject, 3);

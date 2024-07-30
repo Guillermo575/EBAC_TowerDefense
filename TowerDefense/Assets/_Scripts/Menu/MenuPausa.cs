@@ -16,8 +16,8 @@ public class MenuPausa : _Menu
     {
         base.Start();
         gameManager = GameManager.GetManager();
-        gameManager.OnGamePause += MostrarMenuPausa;
-        gameManager.OnGameResume += OcultarMenuPausa;
+        gameManager.OnGamePause += delegate { MostrarMenuPausa(); } ;
+        gameManager.OnGameResume += delegate { OcultarMenuPausa(); };
     }
     private void Update()
     {
@@ -39,11 +39,11 @@ public class MenuPausa : _Menu
     #endregion
 
     #region Mostrar/Ocultar menu
-    private void MostrarMenuPausa(object sender, EventArgs e)
+    private void MostrarMenuPausa()
     {
         menuManager.ShowMenu(menuManager.menuPausa);
     }
-    public void OcultarMenuPausa(object sender, EventArgs e)
+    private void OcultarMenuPausa()
     {
         menuManager.DeleteMenuTree();
     }

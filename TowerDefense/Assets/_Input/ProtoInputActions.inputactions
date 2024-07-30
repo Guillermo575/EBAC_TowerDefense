@@ -809,11 +809,33 @@
                 },
                 {
                     "name": "",
+                    "id": "f303a624-36a1-4dae-95cc-8a8dd2d721d0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Toque",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3f3f972b-3719-4497-8881-ee1cf5ce22bb",
                     "path": "<Touchscreen>/position",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Touch",
+                    "action": "PosicionToque",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e12dfea-f8f9-4739-a210-ecdea038d454",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "PosicionToque",
                     "isComposite": false,
                     "isPartOfComposite": false

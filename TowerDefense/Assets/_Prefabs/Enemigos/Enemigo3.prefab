@@ -376,6 +376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemigo3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4401583b1922eef47ba0c01e87e48f7d, type: 3}
+      propertyPath: m_TagString
+      value: Enemigo
+      objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: 4401583b1922eef47ba0c01e87e48f7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 5.1710625
@@ -725,9 +729,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf8898b27dec3e4aae6c4c1e24707da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 0}
   vida: 40
   damage: 5
+  recursosGanados: 200
 --- !u!114 &2609071864787350201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,7 +750,7 @@ MonoBehaviour:
       - m_Target: {fileID: 704515260514544042}
         m_TargetAssemblyTypeName: _Enemy, Assembly-CSharp
         m_MethodName: MakeDamage
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

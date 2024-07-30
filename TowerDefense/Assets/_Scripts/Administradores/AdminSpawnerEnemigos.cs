@@ -8,35 +8,39 @@ public class AdminSpawnerEnemigos : MonoBehaviour
 {
     #region Variables
     private GameManager gameManager;
-    private HordaEnemigos HordaActual;
-    private int oleada = 0;
-    private bool OleadaFinalizada = false;
-    public delegate void OleadaTerminada();
-    public event OleadaTerminada EnOleadaTerminada;
     public List<HordaEnemigos> ConfigHorda;
     #endregion
 
     #region Getters
     public HordaEnemigos getHordaActual()
     {
-        return HordaActual;
+        if (gameManager.GetRondaActual() >= ConfigHorda.Count) return null;
+        return ConfigHorda[gameManager.GetRondaActual()];
+    }
+    public bool getOleadaIniciada()
+    {
+        return !getOleadaFinalizada();
+    }
+    public int getRondasTotales()
+    {
+        return ConfigHorda.Count;
     }
     public bool getOleadaFinalizada()
     {
-        return OleadaFinalizada;
+        if(getHordaActual() == null) return false;
+        return gameManager.RondaFinal() && getHordaActual().enemigosDuranteEstaOleada <= 0;
     }
     #endregion
 
     #region Start & Update
     void Start()
     {
+        gameManager = GameManager.GetManager();
+        gameManager.OnWaveStart += delegate { IniciarOla(); };
         foreach (var objHorda in ConfigHorda)
         {
             objHorda.Initialize();
         }
-        HordaActual = ConfigHorda[oleada];
-        gameManager = GameManager.GetManager();
-        gameManager.OnRoundStart += delegate { IniciarOla(); };
     }
     void Update()
     {
@@ -46,25 +50,28 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region General
     public void IniciarOla()
     {
-        if (oleada < ConfigHorda.Count && !OleadaFinalizada)
+        if (!getOleadaFinalizada())
         {
-            HordaActual = ConfigHorda[oleada]; 
-            InstanciarEnemigo();
-        }
-        else
-        {
-            OleadaFinalizada = true;
+            //InstanciarEnemigo();
+            StartCoroutine(CourutineSpawn());
         }
     }
-    public void TerminarOla()
+    IEnumerator CourutineSpawn()
     {
-        if (EnOleadaTerminada != null)
+        var HordaActual = getHordaActual();
+        foreach (var indexElegido in HordaActual.IndexHorda)
         {
-            EnOleadaTerminada();
+            var tiempoEspera = gameManager.mathRNG.GetRandom(HordaActual.TiempoEsperaSpawnMinimo, HordaActual.TiempoEsperaSpawnMaximo);
+            yield return new WaitForSeconds(tiempoEspera);
+            var PrefabElegido = HordaActual.lstEnemigos[indexElegido].prefab;
+            var obj = Instantiate<GameObject>(PrefabElegido, transform.position, Quaternion.identity);
+            HordaActual.enemigosDuranteEstaOleada--;
         }
     }
     public void InstanciarEnemigo()
     {
+        var HordaActual = getHordaActual();
+        if (HordaActual.IndexHorda.Length <= 0) return;
         var indexElegido = HordaActual.IndexHorda[HordaActual.enemigosPorOleada - HordaActual.enemigosDuranteEstaOleada];
         var PrefabElegido = HordaActual.lstEnemigos[indexElegido].prefab;
         var obj = Instantiate<GameObject>(PrefabElegido, transform.position, Quaternion.identity);
@@ -72,12 +79,6 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         HordaActual.enemigosDuranteEstaOleada--;
         if (HordaActual.enemigosDuranteEstaOleada <= 0)
         {
-            oleada++;
-            if (oleada >= ConfigHorda.Count)
-            {
-                OleadaFinalizada = true;
-            }
-            TerminarOla();
             return;
         }
         var tiempoEspera = gameManager.mathRNG.GetRandom(HordaActual.TiempoEsperaSpawnMinimo, HordaActual.TiempoEsperaSpawnMaximo);
