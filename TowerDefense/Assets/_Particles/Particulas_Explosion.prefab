@@ -5023,7 +5023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d707f029a3d5f37479edbb72a9135ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 10
   destino: {x: 0, y: 0, z: 0}
   velocidad: 20
   enemigo: {fileID: 0}

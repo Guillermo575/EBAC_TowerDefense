@@ -152,4 +152,4 @@ MonoBehaviour:
   destino: {x: 0, y: 0, z: 0}
   velocidad: 20
   enemigo: {fileID: 0}
-  particulaExplosion: {fileID: 0}
+  particulaExplosion: {fileID: 3218365948646052445, guid: dcd0a76a34adac14ca035f79c8d16cb1, type: 3}
