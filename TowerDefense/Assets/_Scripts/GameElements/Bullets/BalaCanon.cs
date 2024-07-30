@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BalaCanon : _DamageElement
 {
     void Update()
@@ -18,11 +17,19 @@ public class BalaCanon : _DamageElement
         {
             enemigo = gameObject;
             MakeDamage(damage);
-            Destroy(gameObject);
+            DestroyGameObject();
         }
         if (gameObject.tag == "Suelo" || gameObject.tag == "Plataforma")
         {
-            Destroy(gameObject);
+            DestroyGameObject();
         }
+    }
+    public void DestroyGameObject()
+    {
+        if (particulaExplosion != null)
+        {
+            GameObject particulas = Instantiate(particulaExplosion, transform.position, Quaternion.identity) as GameObject;
+        }
+        Destroy(gameObject);
     }
 }

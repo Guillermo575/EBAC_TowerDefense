@@ -9,7 +9,7 @@ public class _DamageElement : MonoBehaviour, IAtacante
     public Vector3 destino;
     public float velocidad = 20;
     public GameObject enemigo;
-
+    public GameObject particulaExplosion;
     void Start()
     {
         gameManager = GameManager.GetManager();

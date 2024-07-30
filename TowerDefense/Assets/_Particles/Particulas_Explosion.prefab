@@ -5024,3 +5024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  destino: {x: 0, y: 0, z: 0}
+  velocidad: 20
+  enemigo: {fileID: 0}
+  particulaExplosion: {fileID: 0}

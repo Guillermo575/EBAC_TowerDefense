@@ -148,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1209fd185ebb542804e11a2f139b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   destino: {x: 0, y: 0, z: 0}
   velocidad: 30
   enemigo: {fileID: 0}
-  damage: 10
+  particulaExplosion: {fileID: 0}

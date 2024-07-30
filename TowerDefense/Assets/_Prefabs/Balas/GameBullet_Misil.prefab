@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4856799432429068135}
   - component: {fileID: 4435899171067987749}
   - component: {fileID: 6623941535268515910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Misil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 136506329033564300}
   - component: {fileID: 2626329143248155435}
   - component: {fileID: 8715315775100730647}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameBullet_Misil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1209fd185ebb542804e11a2f139b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destino: {x: 0, y: 0, z: 0}
-  velocidad: 20
-  enemigo: {fileID: 0}
   damage: 100
+  destino: {x: 0, y: 0, z: 0}
+  velocidad: 10
+  enemigo: {fileID: 0}
+  particulaExplosion: {fileID: 3218365948646052445, guid: dcd0a76a34adac14ca035f79c8d16cb1, type: 3}

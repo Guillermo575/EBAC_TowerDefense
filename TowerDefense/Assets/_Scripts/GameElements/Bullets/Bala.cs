@@ -22,11 +22,19 @@ public class Bala : _DamageElement
         {
             enemigo = collision.gameObject;
             MakeDamage(damage);
-            Destroy(gameObject);
+            DestroyGameObject();
         }
         if (collision.gameObject.tag == "Suelo" || collision.gameObject.tag == "Plataforma")
         {
-            Destroy(gameObject);
+            DestroyGameObject();
         }
+    }
+    public void DestroyGameObject()
+    {
+        if (particulaExplosion != null)
+        {
+            GameObject particulas = Instantiate(particulaExplosion, transform.position, Quaternion.identity) as GameObject;
+        }
+        Destroy(gameObject);
     }
 }
