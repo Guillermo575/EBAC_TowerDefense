@@ -1,0 +1,19 @@
+Resolution Failed.
+
+Resolution failed
+
+Failed to fetch the following dependencies:
+com.google.games:gpgs-plugin-support:0.11.01
+
+
+UnityEngine.Debug:LogError (object)
+Google.Logger:Log (string,Google.LogLevel) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/Logger.cs:136)
+GooglePlayServices.PlayServicesResolver:Log (string,Google.LogLevel) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/AndroidResolver/src/PlayServicesResolver.cs:1055)
+GooglePlayServices.PlayServicesResolver/<ResolveUnsafe>c__AnonStorey25:<>m__47 (bool,string) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/AndroidResolver/src/PlayServicesResolver.cs:1913)
+GooglePlayServices.PlayServicesResolver/<ResolveUnsafe>c__AnonStorey25:<>m__57 () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/AndroidResolver/src/PlayServicesResolver.cs:1980)
+Google.RunOnMainThread:ExecuteNext () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:486)
+Google.RunOnMainThread:<ExecuteAllUnnested>m__12 () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:536)
+Google.RunOnMainThread:RunAction (System.Action) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:343)
+Google.RunOnMainThread:ExecuteAllUnnested (bool) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:530)
+Google.RunOnMainThread:ExecuteAll () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:512)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()

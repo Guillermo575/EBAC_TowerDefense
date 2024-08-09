@@ -1,0 +1,19 @@
+Job failed with exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: Insecure connection not allowed
+  at (wrapper managed-to-native) UnityEngine.Networking.UnityWebRequest.BeginWebRequest_Injected(intptr)
+  at UnityEngine.Networking.UnityWebRequest.BeginWebRequest () [0x0000f] in <8a7868a0d96346e5b1e6d03cefe7e3d9>:0 
+  at UnityEngine.Networking.UnityWebRequest.SendWebRequest () [0x00001] in <8a7868a0d96346e5b1e6d03cefe7e3d9>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <f843d796055e4deaa447e7ba073cff5f>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <f843d796055e4deaa447e7ba073cff5f>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <f843d796055e4deaa447e7ba073cff5f>:0 
+  at Google.PortableWebRequest.StartRequest (Google.PortableWebRequest+HttpMethod method, System.String url, System.Collections.Generic.IDictionary`2[TKey,TValue] headers, UnityEngine.WWWForm form) [0x0019e] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/PortableWebRequest.cs:508 
+  at Google.PortableWebRequest+<StartRequestOnMainThread>c__AnonStorey6.<>m__C () [0x00000] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/PortableWebRequest.cs:458 
+  at Google.RunOnMainThread.ExecuteNext () [0x0003d] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:486 
+UnityEngine.Debug:LogError (object)
+Google.RunOnMainThread:ExecuteNext () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:488)
+Google.RunOnMainThread:<ExecuteAllUnnested>m__12 () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:536)
+Google.RunOnMainThread:RunAction (System.Action) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:343)
+Google.RunOnMainThread:ExecuteAllUnnested (bool) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:530)
+Google.RunOnMainThread:ExecuteAll () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:512)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()

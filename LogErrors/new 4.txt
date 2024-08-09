@@ -1,0 +1,190 @@
+CommandInvokationFailure: Gradle build failed. 
+D:\Program Files\Unity\2023.2.18f1\Editor\Data\PlaybackEngines\AndroidPlayer\OpenJDK\bin\java.exe -classpath "D:\Program Files\Unity\2023.2.18f1\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\gradle\lib\gradle-launcher-7.6.jar" org.gradle.launcher.GradleMain "-Dorg.gradle.jvmargs=-Xmx4096m" "assembleRelease"
+
+Environment Variables:
+PROCESSOR_ARCHITECTURE = AMD64
+AMPLITUDE_API_KEY_YELLOWBUCKET_DEV = 48835b4d1f5e342aefe5f016324d296a
+ANDROID_NDK_ROOT = D:\Program Files\Unity\2023.2.18f1\Editor\Data\PlaybackEngines\AndroidPlayer\NDK
+DriverData = C:\Windows\System32\Drivers\DriverData
+USERDOMAIN = DESKTOP-C2FMRVV
+CommonProgramFiles(x86) = C:\Program Files (x86)\Common Files
+COMPUTERNAME = DESKTOP-C2FMRVV
+DEBUG_ENV_VAR = UnityHub
+LOGONSERVER = \\DESKTOP-C2FMRVV
+AMPLITUDE_TOKEN_GREENBUCKET_PROD = ZpUcbAdZXJYzNSoHsAWtL_s_JppwWid9
+PUBLIC = C:\Users\Public
+ProgramData = C:\ProgramData
+SESSIONNAME = Console
+AMPLITUDE_TOKEN_YELLOWBUCKET_PROD = UYDQtPOw83dIfVy3SrW5oMyo7ru4PRkV
+ALLUSERSPROFILE = C:\ProgramData
+SystemRoot = C:\Windows
+windir = C:\Windows
+AMPLITUDE_API_KEY_REDBUCKET_DEV = 46b8b46515e7632fc42a504b72e05fd0
+ProgramFiles(x86) = C:\Program Files (x86)
+ProgramW6432 = C:\Program Files
+OS = Windows_NT
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
+HOMEPATH = \Users\Guillermo Sebastián
+FPS_BROWSER_USER_PROFILE_STRING = Default
+GIT_LFS_PATH = C:\Program Files\Git LFS
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11240_MHMETFFGWODIVJFT
+PROCESSOR_LEVEL = 6
+CommonProgramFiles = C:\Program Files\Common Files
+JAVA_HOME = D:\Program Files\Unity\2023.2.18f1\Editor\Data\PlaybackEngines\AndroidPlayer\OpenJDK
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-C2FMRVV
+TEMP = C:\Users\GUILLE~1\AppData\Local\Temp
+ProgramFiles = C:\Program Files
+CommonProgramW6432 = C:\Program Files\Common Files
+AMPLITUDE_TOKEN_YELLOWBUCKET_DEV = wKi8foVigDditGFvmZewRFWsEbX9Y0YO
+AMPLITUDE_API_KEY_GREENBUCKET_DEV = 3ded2a762163603391a425f688f990c8
+AMPLITUDE_API_KEY_REDBUCKET_PROD = ca12bb461ea96f9bdf5df4ded7d52994
+HOMEDRIVE = C:
+AMPLITUDE_API_KEY_STAGING = 83ee04fccc67e4fcc7dd527c4c6f1e21
+USERNAME = Guillermo Sebastián
+OneDrive = C:\Users\Guillermo Sebastián\OneDrive
+AMPLITUDE_API_KEY_YELLOWBUCKET_PROD = e03a9bbe92dc38a88cdb068d24c65b46
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+AMPLITUDE_TOKEN_REDBUCKET_PROD = jTIgKs5KTZOjiqEEVdZFbgo_VRhABduL
+OMP_WAIT_POLICY = PASSIVE
+NUMBER_OF_PROCESSORS = 20
+AMPLITUDE_TOKEN_GREENBUCKET_DEV = 84H2gMm_FJzhr3mBaX1lM1JVukmCM7d9
+AMPLITUDE_DEPLOYMENT_KEY_RED_BUCKET_DEV = client-wbjHYrmeSR87GmWOE7LDpf7sUySOIKHm
+KMP_BLOCKTIME = 0
+AMPLITUDE_API_KEY_GREENBUCKET_PROD = c86fea37a9e1d3f0878b96e15b111c7c
+ComSpec = C:\Windows\system32\cmd.exe
+TMP = C:\Users\GUILLE~1\AppData\Local\Temp
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+PROCESSOR_REVISION = 9702
+AMPLITUDE_DEPLOYMENT_KEY_RED_BUCKET_PROD = client-zH8Y7OK1i331EKuG77C6UxN8ygcM6LzS
+AMPLITUDE_TOKEN_REDBUCKET_DEV = U4PSN7S7PuYVRODivvdcFwbu8R6IHGqa
+SystemDrive = C:
+AMPLITUDE_API_KEY = 28f3cae0b33b8b3702120c9ed1a935aa
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+SENTRY_ACCESS_TOKEN = 3df78d9e53f8456aa90fbae044ce1a6261421ab1d0014674bc2e933477289017
+APPDATA = C:\Users\Guillermo Sebastián\AppData\Roaming
+Path = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\PlasticSCM5\server;C:\Program Files\PlasticSCM5\client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\Git LFS;C:\Users\Guillermo Sebastián\AppData\Local\Microsoft\WindowsApps;C:\Users\Guillermo Sebastián\AppData\Local\gitkraken\bin;C:\Users\Guillermo Sebastián\AppData\Local\GitHubDesktop\bin;C:\Users\Guillermo Sebastián\.dotnet\tools
+PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+LOCALAPPDATA = C:\Users\Guillermo Sebastián\AppData\Local
+USERPROFILE = C:\Users\Guillermo Sebastián
+WOOTRIC_CLIENT_TOKEN = NPS-aa8be4c3
+
+
+stderr[
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':unityLibrary:configureCMakeRelWithDebInfo[arm64-v8a]'.
+> [CXX1405] error when building with cmake using D:\Git\EBAC_TowerDefense\TowerDefense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt: C++ build system [prefab] failed while executing:
+      @echo off
+      "D:\\Program Files\\Unity\\2023.2.18f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\OpenJDK\\bin\\java" ^
+        --class-path ^
+        "C:\\Users\\Guillermo Sebastißn\\.gradle\\caches\\modules-2\\files-2.1\\com.google.prefab\\cli\\2.0.0\\f2702b5ca13df54e3ca92f29d6b403fb6285d8df\\cli-2.0.0-all.jar" ^
+        com.google.prefab.cli.AppKt ^
+        --build-system ^
+        cmake ^
+        --platform ^
+        android ^
+        --abi ^
+        arm64-v8a ^
+        --os-version ^
+        30 ^
+        --stl ^
+        c++_shared ^
+        --ndk-version ^
+        23 ^
+        --output ^
+        "D:\\Git\\EBAC_TowerDefense\\TowerDefense\\.utmp\\RelWithDebInfo\\2a81uw5c\\prefab\\arm64-v8a\\prefab-configure" ^
+        "C:\\Users\\Guillermo Sebastißn\\.gradle\\caches\\transforms-3\\121b6b243cedf8bef90d462440e4bf24\\transformed\\jetified-games-frame-pacing-1.10.0\\prefab"
+    from D:\Git\EBAC_TowerDefense\TowerDefense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary
+  Error: no se ha encontrado o cargado la clase principal com.google.prefab.cli.AppKt
+  Causado por: java.lang.ClassNotFoundException: com.google.prefab.cli.AppKt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 4s
+]
+stdout[
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:preBuild UP-TO-DATE
+> Task :unityLibrary:preBuild UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:preReleaseBuild UP-TO-DATE
+> Task :unityLibrary:preReleaseBuild UP-TO-DATE
+> Task :launcher:preBuild UP-TO-DATE
+> Task :launcher:preReleaseBuild UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:compileReleaseAidl NO-SOURCE
+> Task :launcher:generateReleaseBuildConfig UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :launcher:javaPreCompileRelease UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:mergeReleaseNativeLibs NO-SOURCE
+> Task :launcher:generateReleaseResValues UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :launcher:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:packageReleaseRenderscript NO-SOURCE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:compileReleaseRenderscript NO-SOURCE
+> Task :launcher:extractProguardFiles UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:generateReleaseResValues UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:generateReleaseResources UP-TO-DATE
+> Task :launcher:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:packageReleaseResources UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:parseReleaseLocalResources UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:processReleaseManifest UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:generateReleaseRFile UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:generateReleaseBuildConfig UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:javaPreCompileRelease UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:stripReleaseDebugSymbols NO-SOURCE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:extractReleaseAnnotations UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:mergeReleaseShaders UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:compileReleaseShaders NO-SOURCE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:generateReleaseAssets UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:packageReleaseAssets UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:prepareLintJarForPublish UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:prepareReleaseArtProfile UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:processReleaseJavaRes NO-SOURCE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:mergeReleaseJavaResource UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:syncReleaseLibJars UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:writeReleaseAarMetadata UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:bundleReleaseLocalLintAar UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:extractDeepLinksRelease UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:compileReleaseLibraryResources UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:bundleLibResRelease NO-SOURCE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:bundleLibRuntimeToJarRelease UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:createFullJarRelease UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :unityLibrary:GooglePlayGamesManifest.androidlib:bundleLibRuntimeToDirRelease UP-TO-DATE
+> Task :launcher:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :launcher:desugarReleaseFileDependencies UP-TO-DATE
+> Task :launcher:mergeExtDexRelease UP-TO-DATE
+> Task :launcher:mergeReleaseShaders UP-TO-DATE
+> Task :launcher:compileReleaseShaders NO-SOURCE
+> Task :launcher:generateReleaseAssets UP-TO-DATE
+> Task :launcher:processReleaseJavaRes NO-SOURCE
+> Task :launcher:collectReleaseDependencies UP-TO-DATE
+> Task :launcher:sdkReleaseDependencyData UP-TO-DATE
+> Task :launcher:validateSigningRelease UP-TO-DATE
+> Task :launcher:writeReleaseAppMetadata UP-TO-DATE
+> Task :launcher:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :unityLibrary:configureCMakeRelWithDebInfo[arm64-v8a] FAILED
+46 actionable tasks: 1 executed, 45 up-to-date
+]
+exit code: 1
+UnityEditor.Android.Command.WaitForProgramToRun (UnityEditor.Utils.Program p, UnityEditor.Android.Command+WaitingForProcessToExit waitingForProcessToExit, System.String errorMsg) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+UnityEditor.Android.Command.Run (System.Diagnostics.ProcessStartInfo psi, UnityEditor.Android.Command+WaitingForProcessToExit waitingForProcessToExit, System.String errorMsg) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+UnityEditor.Android.Command.Run (System.String command, System.String args, System.String workingdir, UnityEditor.Android.Command+WaitingForProcessToExit waitingForProcessToExit, System.String errorMsg, System.Text.Encoding inputEncoding) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+UnityEditor.Android.AndroidJavaTools.RunJava (System.String args, System.String workingdir, System.Action`1[T] progress, System.String error) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+UnityEditor.Android.GradleWrapper.Run (UnityEditor.Android.AndroidJavaTools javaTools, Unity.Android.Gradle.AndroidGradle androidGradle, System.String workingdir, System.String task, System.Action`1[T] progress) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+Rethrow as GradleInvokationException: Gradle build failed
+UnityEditor.Android.GradleWrapper.Run (UnityEditor.Android.AndroidJavaTools javaTools, Unity.Android.Gradle.AndroidGradle androidGradle, System.String workingdir, System.String task, System.Action`1[T] progress) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+UnityEditor.Android.PostProcessor.Tasks.BuildGradleProject.Execute (UnityEditor.Android.PostProcessor.PostProcessorContext context) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+UnityEditor.Android.PostProcessor.PostProcessRunner.RunAllTasks (UnityEditor.Android.PostProcessor.PostProcessorContext context) (at <fc5f1f8f6507459baca31b68a72cf718>:0)
+UnityEngine.GUIUtility:ProcessEvent(Int32, IntPtr, Boolean&)
