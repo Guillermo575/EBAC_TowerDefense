@@ -17,3 +17,4 @@ Google.RunOnMainThread:RunAction (System.Action) (at /Users/chkuang/Workspace/gi
 Google.RunOnMainThread:ExecuteAllUnnested (bool) (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:530)
 Google.RunOnMainThread:ExecuteAll () (at /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/RunOnMainThread.cs:512)
 UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
