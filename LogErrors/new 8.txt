@@ -1,0 +1,40 @@
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':unityLibrary:configureCMakeRelWithDebInfo[arm64-v8a]'.
+> [CXX1405] error when building with cmake using D:\Git\EBAC_TowerDefense\TowerDefense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt: C++ build system [prefab] failed while executing:
+      @echo off
+      "D:\\Program Files\\Unity\\2023.2.18f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\OpenJDK\\bin\\java" ^
+        --class-path ^
+        "C:\\Users\\Guillermo Sebastißn\\.gradle\\caches\\modules-2\\files-2.1\\com.google.prefab\\cli\\2.0.0\\f2702b5ca13df54e3ca92f29d6b403fb6285d8df\\cli-2.0.0-all.jar" ^
+        com.google.prefab.cli.AppKt ^
+        --build-system ^
+        cmake ^
+        --platform ^
+        android ^
+        --abi ^
+        arm64-v8a ^
+        --os-version ^
+        30 ^
+        --stl ^
+        c++_shared ^
+        --ndk-version ^
+        23 ^
+        --output ^
+        "D:\\Git\\EBAC_TowerDefense\\TowerDefense\\.utmp\\RelWithDebInfo\\2a81uw5c\\prefab\\arm64-v8a\\prefab-configure" ^
+        "C:\\Users\\Guillermo Sebastißn\\.gradle\\caches\\transforms-3\\121b6b243cedf8bef90d462440e4bf24\\transformed\\jetified-games-frame-pacing-1.10.0\\prefab"
+    from D:\Git\EBAC_TowerDefense\TowerDefense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary
+  Error: no se ha encontrado o cargado la clase principal com.google.prefab.cli.AppKt
+  Causado por: java.lang.ClassNotFoundException: com.google.prefab.cli.AppKt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 4s
+
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
