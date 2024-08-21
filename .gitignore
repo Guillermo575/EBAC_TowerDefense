@@ -10,6 +10,7 @@
 /TowerDefense/[Ll]ogs/
 /TowerDefense/[Mm]emoryCaptures/
 /TowerDefense/[Uu]ser[Ss]ettings/
+/TowerDefense/.utmp/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
