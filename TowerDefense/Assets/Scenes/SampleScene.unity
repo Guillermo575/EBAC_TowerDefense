@@ -4720,6 +4720,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74089d61225bc7647b7972cdb91cc0c8, type: 3}
+--- !u!114 &389569503668246268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2639239208917519121, guid: 74089d61225bc7647b7972cdb91cc0c8, type: 3}
+  m_PrefabInstance: {fileID: 389569503668246267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &862594399546678444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4841,6 +4852,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5871314640607927440, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
+      propertyPath: GPGSText
+      value: 
+      objectReference: {fileID: 389569503668246268}
     - target: {fileID: 7881219571664654989, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
       propertyPath: m_Name
       value: GameManager
