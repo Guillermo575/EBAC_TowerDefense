@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
     }
     public void PauseGame()
     {
-        if (ActualGameState == GameState.Action)
+        if (ActualGameState == GameState.Action || ActualGameState == GameState.Preparation)
         {
             GamePause = true;
             OnGamePause();

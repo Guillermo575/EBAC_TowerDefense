@@ -7,10 +7,33 @@ using UnityEngine.UI;
 using static GameManager;
 public class AdministradorUI : MonoBehaviour
 {
+    #region Singleton
+    private static AdministradorUI SingletonGameManager;
+    private AdministradorUI()
+    {
+    }
+    private void CreateSingleton()
+    {
+        if (SingletonGameManager == null)
+        {
+            SingletonGameManager = this;
+        }
+        else
+        {
+            Debug.LogError("Ya existe una instancia de esta clase");
+        }
+    }
+    public static AdministradorUI GetSingleton()
+    {
+        return SingletonGameManager;
+    }
+    #endregion
+
     private GameManager gameManager;
     public GameObject canvasPrincipal;
     public GameObject canvasResultados;
     public GameObject canvasOlaFinal;
+    public GameObject menuTorres;
     public TextMeshProUGUI txtRecursos;
     public TextMeshProUGUI txtOleada;
     public TextMeshProUGUI txtEnemigosDerrotados;
@@ -69,6 +92,13 @@ public class AdministradorUI : MonoBehaviour
         if (gameManager.GetActualGameState() == GameState.Preparation)
         {
             gameManager.StartWave();
+        }
+    }
+    public void PausarJuego()
+    {
+        if (!gameManager.IsGamePause)
+        {
+            gameManager.PauseGame();
         }
     }
 }
