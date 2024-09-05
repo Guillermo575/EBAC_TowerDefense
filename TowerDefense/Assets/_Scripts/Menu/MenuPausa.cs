@@ -15,7 +15,7 @@ public class MenuPausa : _Menu
     protected override void Start()
     {
         base.Start();
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
         gameManager.OnGamePause += delegate { MostrarMenuPausa(); } ;
         gameManager.OnGameResume += delegate { OcultarMenuPausa(); };
     }

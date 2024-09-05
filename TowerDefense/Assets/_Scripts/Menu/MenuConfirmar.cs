@@ -20,7 +20,7 @@ public class MenuConfirmar : _Menu
     #region General
     public void OpenWindow(UnityEvent EventoConfirmar, string titulo = null)
     {
-        menuManager = MenuManager.GetManager();
+        menuManager = MenuManager.GetSingleton();
         menuManager.ShowMenu(this.gameObject);
         this.EventoConfirmar = EventoConfirmar;
         if (!string.IsNullOrEmpty(titulo))

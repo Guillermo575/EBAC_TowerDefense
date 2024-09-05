@@ -14,7 +14,7 @@ public class SliderVolumenMusica : MonoBehaviour
     #region Awake & Start
     void Awake()
     {
-        menuManager = MenuManager.GetManager();
+        menuManager = MenuManager.GetSingleton();
         opciones = menuManager.opciones;
     }
     public void Start()

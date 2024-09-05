@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
-    public static MenuManager GetManager()
+    public static MenuManager GetSingleton()
     {
         return SingletonMenuManager;
     }
