@@ -35,7 +35,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region Start & Update
     void Start()
     {
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
         gameManager.OnWaveStart += delegate { IniciarOla(); };
         foreach (var objHorda in ConfigHorda)
         {
@@ -112,7 +112,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         {
             TiempoEsperaSpawnMinimo = TiempoEsperaSpawnMinimo <= 0 ? 0.5f : TiempoEsperaSpawnMinimo;
             TiempoEsperaSpawnMaximo = TiempoEsperaSpawnMaximo <= 0 ? 0.5f : TiempoEsperaSpawnMaximo;
-            var gameManager = GameManager.GetManager();
+            var gameManager = GameManager.GetSingleton();
             enemigosDuranteEstaOleada = enemigosPorOleada;
             int RangoAnterior = 0;
             for (int l = 0; l < lstEnemigos.Count; l++)

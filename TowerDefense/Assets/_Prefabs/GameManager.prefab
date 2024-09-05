@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: -944628639613478452, guid: 2bfec84904e748f458904c3ef0f3b91c, type: 3}
+  administradorUI: {fileID: 0}
 --- !u!1 &5274960440219107649
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   referenciaObjetivo: {fileID: 0}
-  recursos: 800
+  recursos: 8000
 --- !u!114 &5871314640607927440
 MonoBehaviour:
   m_ObjectHideFlags: 0

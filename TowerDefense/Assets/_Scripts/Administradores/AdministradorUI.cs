@@ -7,6 +7,16 @@ using UnityEngine.UI;
 using static GameManager;
 public class AdministradorUI : MonoBehaviour
 {
+    //public void AdministrarToogles(Toggle toggle)
+    //{
+    //    GameObject[] lstToggle = GameObject.FindGameObjectsWithTag("ToggleTorre");
+    //    foreach (var objToggle in lstToggle)
+    //    {
+    //        var obj = objToggle.GetComponent<Toggle>();
+    //        obj.isOn = GameObject.ReferenceEquals(obj, toggle);
+    //    }
+    //}
+
     #region Singleton
     private static AdministradorUI SingletonGameManager;
     private AdministradorUI()
@@ -29,6 +39,7 @@ public class AdministradorUI : MonoBehaviour
     }
     #endregion
 
+    #region Variables
     private GameManager gameManager;
     public GameObject canvasPrincipal;
     public GameObject canvasResultados;
@@ -38,10 +49,16 @@ public class AdministradorUI : MonoBehaviour
     public TextMeshProUGUI txtOleada;
     public TextMeshProUGUI txtEnemigosDerrotados;
     public TextMeshProUGUI txtJefesDerrotados;
+    #endregion
 
+    #region Start & Update
+    void Awake()
+    {
+        CreateSingleton();
+    }
     void Start()
     {
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
         gameManager.OnGameResume += delegate { canvasPrincipal.SetActive(true); };
         gameManager.OnGamePause += delegate { canvasPrincipal.SetActive(false); };
         gameManager.OnGameEnd += delegate { canvasPrincipal.SetActive(false); OcultarCanvasResultados(); };
@@ -62,6 +79,9 @@ public class AdministradorUI : MonoBehaviour
         txtEnemigosDerrotados.text = $"Enemigos derrotados: {gameManager.GetEnemigosBaseDerrotados()}";
         txtJefesDerrotados.text = $"Jefes derrotados: {gameManager.GetEnemigosJefeDerrotados()}";
     }
+    #endregion
+
+    #region Canvas Resultados
     public void MostrarCanvasResultados()
     {
         canvasResultados.SetActive(true);
@@ -70,6 +90,9 @@ public class AdministradorUI : MonoBehaviour
     {
         canvasResultados.SetActive(false);
     }
+    #endregion
+
+    #region Canvas Ola Final
     public void MostrarCanvasOlaFinal()
     {
         canvasOlaFinal.SetActive(true);
@@ -78,15 +101,9 @@ public class AdministradorUI : MonoBehaviour
     {
         canvasOlaFinal.SetActive(false);
     }
-    public void AdministrarToogles(Toggle toggle)
-    {
-        GameObject[] lstToggle = GameObject.FindGameObjectsWithTag("ToggleTorre");
-        foreach (var objToggle in lstToggle)
-        {
-            var obj = objToggle.GetComponent<Toggle>();
-            obj.isOn = GameObject.ReferenceEquals(obj, toggle);
-        }
-    }
+    #endregion
+
+    #region Interfaz
     public void IniciarOleada()
     {
         if (gameManager.GetActualGameState() == GameState.Preparation)
@@ -101,4 +118,16 @@ public class AdministradorUI : MonoBehaviour
             gameManager.PauseGame();
         }
     }
+    #endregion
+
+    #region MenuTorres
+    public void MostrarMenuTorres()
+    {
+        menuTorres.SetActive(true);
+    }
+    public void OcultarMenuTorres()
+    {
+        menuTorres.SetActive(false);
+    }
+    #endregion
 }

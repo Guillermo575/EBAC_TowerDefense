@@ -13,7 +13,7 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
     public int recursosGanados = 200;
     private void OnEnable()
     {
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
         objetivo = gameManager.referenciaObjetivo.gameObject;
         objetivo.GetComponent<SceneObjective>().EnObjetivoDestruido += Detener;
     }

@@ -12,7 +12,7 @@ public class _DamageElement : MonoBehaviour, IAtacante
     public GameObject particulaExplosion;
     void Start()
     {
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
     }
     public void MakeDamage(int damage = 0)
     {

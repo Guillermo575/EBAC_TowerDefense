@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
-    public static AudioManager GetManager()
+    public static AudioManager GetSingleton()
     {
         return SingletonGameManager;
     }

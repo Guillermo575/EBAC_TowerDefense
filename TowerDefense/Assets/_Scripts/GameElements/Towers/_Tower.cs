@@ -16,7 +16,7 @@ public class _Tower : MonoBehaviour
     private bool TorreActivada = false;
     public virtual void Start()
     {
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
         gameManager.OnWaveStart += delegate { IniciarRutinaObjetivo(); };
         IniciarRutinaObjetivo();
     }

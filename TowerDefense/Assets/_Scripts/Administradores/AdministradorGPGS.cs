@@ -12,7 +12,7 @@ public class AdministradorGPGS : MonoBehaviour
     {
         PlayGamesPlatform.Activate();
         PlayGamesPlatform.Instance.Authenticate(ProcesarAutenticacion);
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
         gameManager.OnWaveEnd += delegate { DesbloquearLogro(); };
     }
     internal void ProcesarAutenticacion(SignInStatus status)

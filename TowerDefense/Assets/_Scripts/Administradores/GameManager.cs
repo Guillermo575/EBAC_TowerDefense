@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
-    public static GameManager GetManager()
+    public static GameManager GetSingleton()
     {
         return SingletonGameManager;
     }
@@ -193,7 +193,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        audioManager = AudioManager.GetManager();
+        audioManager = AudioManager.GetSingleton();
         if (audioManager != null)
         {
             OnGamePause += delegate { audioManager.BGM.Pause(); audioManager.SFX.Pause(); };
