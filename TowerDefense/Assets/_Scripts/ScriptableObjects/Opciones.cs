@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Opciones", menuName = "Tools/Opciones", order = 1)]
 public class Opciones : ObjetoPersistente
 {
+    [HideInInspector] public float MinVolume = -40f;
+    [HideInInspector] public float MaxVolume = -40f;
     public float VolumenSonido = 0;
     public float VolumenMusica = 0;
     public enum dificultad
