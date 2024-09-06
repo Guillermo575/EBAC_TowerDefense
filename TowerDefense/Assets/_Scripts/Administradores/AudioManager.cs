@@ -55,11 +55,13 @@ public class AudioManager : MonoBehaviour
     }
     private void PlayBGM(AudioClip clip)
     {
+        if (opciones.VolumenMusica <= opciones.MinVolume) return;
         BGM.clip = clip;
         BGM.Play();
     }
     public void PlaySoundEffect(AudioClip clip)
     {
+        if (opciones.VolumenMusica <= opciones.MinVolume) return;
         SFX.clip = clip;
         SFX.Play();
     }

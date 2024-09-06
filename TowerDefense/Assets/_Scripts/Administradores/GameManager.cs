@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     #region Privados
     private AudioManager audioManager;
     public MathRNG mathRNG = new MathRNG(3241);
+    public MathRNG mathRNGOther = new MathRNG(3241);
     private int enemigosBaseDerrotados;
     private int enemigosJefeDerrotados;
     private int RondaActual = 0;

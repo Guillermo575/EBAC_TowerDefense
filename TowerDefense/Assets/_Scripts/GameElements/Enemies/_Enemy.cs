@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,15 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
     internal int vidaMaxima = 100;
     internal GameManager gameManager;
     private GameObject objetivo;
+    private bool IsDead;
     public int vida = 100;
     public int damage = 40;
     public int recursosGanados = 200;
+    private AudioSource SourceDisparo;
+    public List<AudioClip> lstClipSpawn;
+    public List<AudioClip> lstClipAttack;
+    public List<AudioClip> lstClipDeath;
+
     private void OnEnable()
     {
         gameManager = GameManager.GetSingleton();
@@ -33,11 +40,21 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
         animator = GetComponent<Animator>();
         animator.SetBool("IsMoving", true);
         GetComponent<NavMeshAgent>().SetDestination(objetivo.transform.position);
+        SourceDisparo = this.GetComponent<AudioSource>();
+        try
+        {
+            PlaySound(lstClipSpawn[gameManager.mathRNGOther.GetRandom(lstClipSpawn.Count - 1)]);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogException(ex);
+        }
     }
     internal virtual void Update()
     {
-        if (vida <= 0)
+        if (vida <= 0 && !IsDead)
         {
+            IsDead = true;
             Death();
         }
     }
@@ -58,6 +75,14 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
         if (objetivo == null) return;
         damage = damage <= 0 ? this.damage : damage;
         objetivo?.GetComponent<SceneObjective>().ReceiveDamage(damage);
+        try
+        {
+            PlaySound(lstClipAttack[gameManager.mathRNGOther.GetRandom(lstClipAttack.Count - 1)]);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogException(ex);
+        }
     }
     public void ReceiveDamage(int damage)
     {
@@ -71,10 +96,29 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
         animator.SetTrigger("OnDeath");
         GetComponent<NavMeshAgent>().SetDestination(transform.position);
         Destroy(gameObject, 3);
+        try
+        {
+            PlaySound(lstClipDeath[gameManager.mathRNGOther.GetRandom(lstClipDeath.Count - 1)]);
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+        }
     }
     public void Detener()
     {
         animator.SetTrigger("OnObjectiveDestroyed");
         GetComponent<NavMeshAgent>().SetDestination(transform.position);
+    }
+    public void PlaySound(AudioClip clip)
+    {
+        try
+        {
+            SourceDisparo.clip = clip;
+            SourceDisparo.Play();
+        }
+        catch (Exception e) { 
+            Debug.LogException(e);
+        }
     }
 }
