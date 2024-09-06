@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objetivo: {fileID: 0}
+  plataformaSeleccionada: {fileID: 0}
   torreSeleccionada: 0
   prefabTorres:
   - {fileID: 751021043722471600, guid: c2f40e5c1f08a154dad52215cd42e957, type: 3}
@@ -97,7 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: -944628639613478452, guid: 2bfec84904e748f458904c3ef0f3b91c, type: 3}
-  administradorUI: {fileID: 0}
+  materialPlataforma: {fileID: 0}
+  materialSeleccionado: {fileID: 0}
 --- !u!1 &5274960440219107649
 GameObject:
   m_ObjectHideFlags: 0

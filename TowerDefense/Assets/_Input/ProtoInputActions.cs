@@ -806,7 +806,7 @@ namespace UnityEngine.InputSystem
                     ""id"": ""07d4d11e-0e82-4cc7-b610-df83d5d61018"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""initialStateCheck"": false
                 },
                 {

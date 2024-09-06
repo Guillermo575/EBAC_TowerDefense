@@ -30,6 +30,8 @@ public class AdministradorToques : MonoBehaviour
 
     #region Variables
     public InputActionAsset inputs;
+    public Material materialPlataforma;
+    public Material materialSeleccionado;
     private InputAction toque;
     private InputAction posicionToque;
     private Camera mainCam;
@@ -74,6 +76,12 @@ public class AdministradorToques : MonoBehaviour
             Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.gameObject.tag == "Plataforma" && !administradorUI.menuTorres.activeSelf)
             {
+                var lstPlatform = GameObject.FindGameObjectsWithTag("Plataforma");
+                foreach (var objplatform in lstPlatform) 
+                { 
+                    objplatform.GetComponent<Renderer>().material = materialPlataforma;
+                }
+                hit.transform.gameObject.GetComponent<Renderer>().material = materialSeleccionado;
                 administradorUI.MostrarMenuTorres();
                 administradorTorres.plataformaSeleccionada = hit.transform.gameObject;
             }
