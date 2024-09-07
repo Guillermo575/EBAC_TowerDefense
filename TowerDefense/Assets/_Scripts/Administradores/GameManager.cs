@@ -194,13 +194,13 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        audioManager = AudioManager.GetSingleton();
-        if (audioManager != null)
-        {
-            OnGamePause += delegate { audioManager.BGM.Pause(); audioManager.SFX.Pause(); };
-            OnGameResume += delegate { audioManager.BGM.UnPause(); audioManager.SFX.UnPause(); };
-            OnGameEnd += delegate { audioManager.BGM.Stop(); audioManager.SFX.Stop(); };
-        }
+        //audioManager = AudioManager.GetSingleton();
+        //if (audioManager != null)
+        //{
+        //    OnGamePause += delegate { audioManager.BGM.Pause(); audioManager.SFX.Pause(); };
+        //    OnGameResume += delegate { audioManager.BGM.UnPause(); audioManager.SFX.UnPause(); };
+        //    OnGameEnd += delegate { audioManager.BGM.Stop(); audioManager.SFX.Stop(); };
+        //}
         OnGameStart();
         WavePreparation();
         //Invoke("StartWave", 0.5f);

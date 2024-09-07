@@ -886,7 +886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ARTILLERY
+  m_text: TOWER DEFENSE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09f0518967e8a824794ee3c29a776158, type: 2}
   m_sharedMaterial: {fileID: -1965837218556662869, guid: 09f0518967e8a824794ee3c29a776158, type: 2}

@@ -4844,14 +4844,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5526224958864599634, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
-      propertyPath: materialPlataforma
-      value: 
-      objectReference: {fileID: 2100000, guid: e9886dc53f9268448adb4437c286cb8b, type: 2}
-    - target: {fileID: 5526224958864599634, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
-      propertyPath: materialSeleccionado
-      value: 
-      objectReference: {fileID: 2100000, guid: 88821722555252c4ca4fb07a5f1889f0, type: 2}
     - target: {fileID: 5871314640607927440, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
       propertyPath: GPGSText
       value: 

@@ -117,8 +117,8 @@ public class _Enemy : MonoBehaviour, IAtacante, IAtacable
             SourceDisparo.clip = clip;
             SourceDisparo.Play();
         }
-        catch (Exception e) { 
-            Debug.LogException(e);
+        catch (Exception e) {
+            UnityEngine.Debug.LogException(e);
         }
     }
 }

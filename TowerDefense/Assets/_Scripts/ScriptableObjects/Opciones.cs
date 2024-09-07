@@ -15,12 +15,14 @@ public class Opciones : ObjetoPersistente
         normal,
         dificil
     }
-    public void CambiarVolumenSonido(float nuevaVolumenSonido)
+    public void CambiarVolumenMusica(float nuevaVolumen)
     {
-        VolumenSonido = nuevaVolumenSonido;
+        VolumenMusica = nuevaVolumen;
+        AudioManager.GetSingleton().SetBGMVolume(VolumenMusica);
     }
-    public void CambiarVolumenMusica(float nuevaVolumenMusica)
+    public void CambiarVolumenSonido(float nuevaVolumen)
     {
-        VolumenMusica = nuevaVolumenMusica;
+        VolumenSonido = nuevaVolumen;
+        AudioManager.GetSingleton().SetSFXVolume(VolumenSonido);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,11 +15,16 @@ public class _Tower : MonoBehaviour
     public float TiempoCadencia = 3f;
     public float DistanciaRango = 5f;
     private bool TorreActivada = false;
+    private AudioSource SourceDisparo;
+    public AudioClip clipSpawn;
+    public AudioClip clipAttack;
     public virtual void Start()
     {
+        SourceDisparo = this.GetComponent<AudioSource>();
         gameManager = GameManager.GetSingleton();
         gameManager.OnWaveStart += delegate { IniciarRutinaObjetivo(); };
         IniciarRutinaObjetivo();
+        PlaySound(clipSpawn);
     }
     void Update()
     {
@@ -39,6 +45,7 @@ public class _Tower : MonoBehaviour
             tempBala.transform.LookAt(enemigo.transform);
             tempBala.GetComponent<Bala>().destino = enemigo.transform.position;
         }
+        PlaySound(clipAttack);
     }
     private void ActualizarObjetivo()
     {
@@ -81,5 +88,17 @@ public class _Tower : MonoBehaviour
             yield return new WaitForSeconds(TiempoCadencia);
         }
         TorreActivada = false;
+    }
+    public void PlaySound(AudioClip clip)
+    {
+        try
+        {
+            SourceDisparo.clip = clip;
+            SourceDisparo.Play();
+        }
+        catch (Exception e)
+        {
+            UnityEngine.Debug.LogException(e);
+        }
     }
 }

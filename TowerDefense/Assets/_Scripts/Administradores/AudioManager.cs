@@ -29,43 +29,26 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    public Opciones opciones;
-    public AudioSource BGM;
-    public AudioSource SFX;
     public AudioMixer audioMixer;
-
+    public Opciones opciones;
     void Awake()
     {
         CreateSingleton();
     }
-    void Start()
+    private void Start()
     {
-        UpdateSound();
+        SetBGMVolume(opciones.VolumenMusica);
+        SetSFXVolume(opciones.VolumenSonido);        
     }
-    private void Update()
+    public void SetBGMVolume(float volume)
     {
-        UpdateSound();
+        audioMixer.SetFloat("BGMVol", volume);
     }
-    private void UpdateSound()
+    public void SetSFXVolume(float volume)
     {
-        BGM.volume = DecibelToLinear(opciones.VolumenMusica);
-        SFX.volume = DecibelToLinear(opciones.VolumenSonido);
-        audioMixer.SetFloat("BGMVol", opciones.VolumenMusica);
-        audioMixer.SetFloat("SFXVol", opciones.VolumenSonido);
+        audioMixer.SetFloat("SFXVol", volume);
     }
-    private void PlayBGM(AudioClip clip)
-    {
-        if (opciones.VolumenMusica <= opciones.MinVolume) return;
-        BGM.clip = clip;
-        BGM.Play();
-    }
-    public void PlaySoundEffect(AudioClip clip)
-    {
-        if (opciones.VolumenMusica <= opciones.MinVolume) return;
-        SFX.clip = clip;
-        SFX.Play();
-    }
-    private float LinearToDecibel(float linear)
+    public static float LinearToDecibel(float linear)
     {
         float dB;
         if (linear != 0)
@@ -74,7 +57,7 @@ public class AudioManager : MonoBehaviour
             dB = -144.0f;
         return dB;
     }
-    private float DecibelToLinear(float dB)
+    public static float DecibelToLinear(float dB)
     {
         if (dB == -80f) return 0;
         float linear = Mathf.Pow(10.0f, dB / 20.0f);
