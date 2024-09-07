@@ -37,6 +37,7 @@ public class MenuManager : MonoBehaviour
     public GameObject menuPausa;
     public GameObject menuFinNivel; //Ganar
     public GameObject menuFinJuego; //Perder
+    public GameObject menuCreditos; //Perder
     #endregion
 
     #region Start

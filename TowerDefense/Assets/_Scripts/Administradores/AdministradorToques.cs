@@ -38,6 +38,7 @@ public class AdministradorToques : MonoBehaviour
     public delegate void PlataformaTocada(GameObject plataforma);
     private AdministradorUI administradorUI;
     private AdministradorTorres administradorTorres;
+    private GameManager gameManager;
     #endregion
 
     private void OnEnable()
@@ -60,6 +61,7 @@ public class AdministradorToques : MonoBehaviour
     }
     private void Start()
     {
+        gameManager = GameManager.GetSingleton();
         administradorUI = AdministradorUI.GetSingleton();
         administradorTorres = AdministradorTorres.GetSingleton();
         mainCam = Camera.main;
@@ -76,6 +78,7 @@ public class AdministradorToques : MonoBehaviour
             Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.gameObject.tag == "Plataforma" && !administradorUI.menuTorres.activeSelf)
             {
+                if (gameManager.IsGamePause) return;
                 var lstPlatform = GameObject.FindGameObjectsWithTag("Plataforma");
                 foreach (var objplatform in lstPlatform) 
                 { 

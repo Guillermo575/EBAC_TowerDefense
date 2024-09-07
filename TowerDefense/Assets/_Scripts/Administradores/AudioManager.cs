@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,17 +30,26 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
+    #region Variables
     public AudioMixer audioMixer;
     public Opciones opciones;
+    private AudioSource audioSource;
+    #endregion
+
+    #region Awake & Start
     void Awake()
     {
         CreateSingleton();
     }
     private void Start()
     {
+        audioSource = this.GetComponentInParent<AudioSource>();
         SetBGMVolume(opciones.VolumenMusica);
         SetSFXVolume(opciones.VolumenSonido);        
     }
+    #endregion
+
+    #region Change Volume
     public void SetBGMVolume(float volume)
     {
         audioMixer.SetFloat("BGMVol", volume);
@@ -63,4 +73,21 @@ public class AudioManager : MonoBehaviour
         float linear = Mathf.Pow(10.0f, dB / 20.0f);
         return linear;
     }
+    #endregion
+
+    #region Play Sound
+    public void PlaySound(AudioClip clip, Boolean ReiniciarRepetido = false)
+    {
+        try
+        {
+            if (clip.name == audioSource.clip.name && !ReiniciarRepetido) return;
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+        catch (Exception e)
+        {
+            UnityEngine.Debug.LogException(e);
+        }
+    }
+    #endregion
 }

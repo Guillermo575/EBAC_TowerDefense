@@ -29,5 +29,9 @@ public class MenuPrincipal : _Menu
     {
         menuManager.BackMenu();
     }
+    public void MostrarCreditos()
+    {
+        menuManager.ShowMenu(menuManager.menuCreditos);
+    }
     #endregion
 }
