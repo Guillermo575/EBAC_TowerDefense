@@ -54,7 +54,7 @@ MonoBehaviour:
   puntasCanon:
   - {fileID: 8820042271034895262}
   - {fileID: 7229520317334334224}
-  CostoInstalacion: 300
+  CostoInstalacion: 200
   TiempoCadencia: 2
   DistanciaRango: 30
   clipSpawn: {fileID: 8300000, guid: f4710dbf640ee5a449556b03df64c69b, type: 3}

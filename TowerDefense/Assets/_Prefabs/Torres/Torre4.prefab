@@ -301,7 +301,7 @@ MonoBehaviour:
   prefabbala: {fileID: 456343279591412553, guid: d154141132f0f4a4ea0b3bd166edad29, type: 3}
   puntasCanon:
   - {fileID: 762283028017393405}
-  CostoInstalacion: 300
+  CostoInstalacion: 150
   TiempoCadencia: 3
   DistanciaRango: 30
   clipSpawn: {fileID: 8300000, guid: 43f8677d74ad76f43b333b7b35eae13f, type: 3}
