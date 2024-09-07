@@ -800,7 +800,7 @@
                     "name": "",
                     "id": "995a9ab2-a360-4123-8f1a-3fe12dc935d8",
                     "path": "<Touchscreen>/Press",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "Touch",
                     "action": "Toque",
