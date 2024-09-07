@@ -74,10 +74,10 @@ public class AdministradorUI : MonoBehaviour
     }
     void Update()
     {
-        txtOleada.text = $"Oleada: {gameManager.GetRondaActual() + 1}";
-        txtRecursos.text = $"Recursos: {gameManager.GetRecursos()}";
-        txtEnemigosDerrotados.text = $"Enemigos derrotados: {gameManager.GetEnemigosBaseDerrotados()}";
-        txtJefesDerrotados.text = $"Jefes derrotados: {gameManager.GetEnemigosJefeDerrotados()}";
+        txtOleada.text = $"Wave: {gameManager.GetRondaActual() + 1}";
+        txtRecursos.text = $"Gold: {gameManager.GetRecursos()}";
+        txtEnemigosDerrotados.text = $"Enemy Defeated: {gameManager.GetEnemigosBaseDerrotados()}";
+        txtJefesDerrotados.text = $"Bosses Defeated: {gameManager.GetEnemigosJefeDerrotados()}";
     }
     #endregion
 
