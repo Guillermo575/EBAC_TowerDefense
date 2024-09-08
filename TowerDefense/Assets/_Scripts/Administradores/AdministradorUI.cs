@@ -44,7 +44,9 @@ public class AdministradorUI : MonoBehaviour
     public GameObject canvasPrincipal;
     public GameObject canvasResultados;
     public GameObject canvasOlaFinal;
+    public GameObject canvasOlaInicio;
     public GameObject menuTorres;
+    public GameObject btnStartWave;
     public TextMeshProUGUI txtRecursos;
     public TextMeshProUGUI txtOleada;
     public TextMeshProUGUI txtEnemigosDerrotados;
@@ -66,15 +68,20 @@ public class AdministradorUI : MonoBehaviour
             if (gameManager.RondaFinal())
             {
                 MostrarCanvasOlaFinal(); 
-                Invoke("OcultarCanvasOlaFinal", 3f); 
+                Invoke("OcultarCanvasOlaFinal", 3f);
+            }
+            else
+            {
+                MostrarCanvasOlaInicio();
+                Invoke("OcultarCanvasOlaInicio", 3f);
             }
         };
-        gameManager.OnWavePreparation += delegate { OcultarCanvasResultados(); };
+        gameManager.OnWavePreparation += delegate { btnStartWave.SetActive(true); OcultarCanvasResultados(); };
         gameManager.OnWaveEnd += delegate { MostrarCanvasResultados(); };
     }
     void Update()
     {
-        txtOleada.text = $"Wave: {gameManager.GetRondaActual() + 1}";
+        txtOleada.text = $"Wave: {gameManager.GetRondaActual() + 1} - { gameManager.GetRondasTotales() }";
         txtRecursos.text = $"Gold: {gameManager.GetRecursos()}";
         txtEnemigosDerrotados.text = $"Enemy Defeated: {gameManager.GetEnemigosBaseDerrotados()}";
         txtJefesDerrotados.text = $"Bosses Defeated: {gameManager.GetEnemigosJefeDerrotados()}";
@@ -89,6 +96,17 @@ public class AdministradorUI : MonoBehaviour
     public void OcultarCanvasResultados()
     {
         canvasResultados.SetActive(false);
+    }
+    #endregion
+
+    #region Canvas Ola Inicio
+    public void MostrarCanvasOlaInicio()
+    {
+        canvasOlaInicio.SetActive(true);
+    }
+    public void OcultarCanvasOlaInicio()
+    {
+        canvasOlaInicio.SetActive(false);
     }
     #endregion
 
@@ -108,6 +126,7 @@ public class AdministradorUI : MonoBehaviour
     {
         if (gameManager.GetActualGameState() == GameState.Preparation)
         {
+            btnStartWave.SetActive(false);
             gameManager.StartWave();
         }
     }

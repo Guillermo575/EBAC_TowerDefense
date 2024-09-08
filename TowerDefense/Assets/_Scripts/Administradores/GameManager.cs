@@ -46,6 +46,10 @@ public class GameManager : MonoBehaviour
     {
         return RondaActual;
     }
+    public int GetRondasTotales()
+    {
+        return RondasTotales;
+    }
     public int GetEnemigosBaseDerrotados()
     {
         return enemigosBaseDerrotados;
