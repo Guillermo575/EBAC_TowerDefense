@@ -24,6 +24,9 @@
 
 public static class GPGSIds
 {
+        public const string achievement_second_level_completed = "CgkIjdypu_YcEAIQAw"; // <GPGSID>
+        public const string achievement_first_level_completed = "CgkIjdypu_YcEAIQAg"; // <GPGSID>
+        public const string achievement_final_level_completed = "CgkIjdypu_YcEAIQBA"; // <GPGSID>
         public const string achievement_primer_oleada_ganada = "CgkIjdypu_YcEAIQAQ"; // <GPGSID>
 
 }

@@ -82,7 +82,7 @@ public class AdministradorTorres : MonoBehaviour
     {
         int indiceTorre = (int)torreSeleccionada;
         var prefabTorre = prefabTorres[indiceTorre].GetComponent<_Tower>();
-        if (plataforma.transform.childCount == 0 && gameManager.GetRecursos() > prefabTorre.CostoInstalacion)
+        if (plataforma.transform.childCount == 0 && gameManager.GetRecursos() >= prefabTorre.CostoInstalacion)
         {
             gameManager.ModificarRecursos(-prefabTorre.CostoInstalacion);
             Debug.Log("Creando Torre");

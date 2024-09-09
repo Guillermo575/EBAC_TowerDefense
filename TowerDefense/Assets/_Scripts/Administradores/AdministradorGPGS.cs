@@ -4,6 +4,7 @@ using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class AdministradorGPGS : MonoBehaviour
 {
     private GameManager gameManager;
@@ -13,7 +14,17 @@ public class AdministradorGPGS : MonoBehaviour
         PlayGamesPlatform.Activate();
         PlayGamesPlatform.Instance.Authenticate(ProcesarAutenticacion);
         gameManager = GameManager.GetSingleton();
-        gameManager.OnWaveEnd += delegate { DesbloquearLogro(); };
+        gameManager.OnWaveEnd += delegate { DesbloquearLogro(GPGSIds.achievement_primer_oleada_ganada); };
+        gameManager.OnGameLevelCleared += delegate
+        {
+            var scene = SceneManager.GetActiveScene();
+            switch (scene.name)
+            {
+                case "Scene_1": DesbloquearLogro(GPGSIds.achievement_first_level_completed); break;
+                case "Scene_2": DesbloquearLogro(GPGSIds.achievement_second_level_completed); break;
+                case "Scene_3": DesbloquearLogro(GPGSIds.achievement_final_level_completed); break;
+            }
+        };
     }
     internal void ProcesarAutenticacion(SignInStatus status)
     {
@@ -26,11 +37,11 @@ public class AdministradorGPGS : MonoBehaviour
             GPGSText.text = $"Bad Auth";
         }
     }
-    internal void DesbloquearLogro()
+    internal void DesbloquearLogro(string Logro)
     {
         string mStatus;
         Social.ReportProgress(
-            GPGSIds.achievement_primer_oleada_ganada,
+            Logro,
             100.0f,
             (bool success) =>
             {

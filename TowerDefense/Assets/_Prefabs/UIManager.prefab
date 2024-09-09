@@ -1210,6 +1210,7 @@ GameObject:
   - component: {fileID: 3231737579303951258}
   - component: {fileID: 8898635861368489517}
   - component: {fileID: 6436850050659689535}
+  - component: {fileID: 2073281846126395377}
   m_Layer: 5
   m_Name: BotonTorre5
   m_TagString: Untagged
@@ -1344,6 +1345,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2073281846126395377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666579157733252986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b07778dfdc43b14da377c7ce3c41cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Costo: 250
 --- !u!1 &3811641005555663101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.999996, y: -35.00002}
+  m_AnchoredPosition: {x: 30, y: -35.00002}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6675191116256312767
@@ -2407,13 +2421,14 @@ GameObject:
   - component: {fileID: 229278939798409140}
   - component: {fileID: 9046394830132611825}
   - component: {fileID: 8960488850726283570}
+  - component: {fileID: 8234419384899469231}
   m_Layer: 5
   m_Name: BotonTorre4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5661672960144981039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2432,7 +2447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -88, y: -192}
+  m_AnchoredPosition: {x: 389, y: -38}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &229278939798409140
@@ -2541,6 +2556,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &8234419384899469231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460614204199882143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b07778dfdc43b14da377c7ce3c41cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Costo: 150
 --- !u!1 &5773416304246902316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,6 +2581,7 @@ GameObject:
   - component: {fileID: 3720602840702115940}
   - component: {fileID: 149236456615998619}
   - component: {fileID: 7117541879665594973}
+  - component: {fileID: 5101307338747900356}
   m_Layer: 5
   m_Name: BotonTorre3
   m_TagString: Untagged
@@ -2578,7 +2607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 131, y: -192}
+  m_AnchoredPosition: {x: 30, y: -192}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3720602840702115940
@@ -2687,6 +2716,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &5101307338747900356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5773416304246902316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b07778dfdc43b14da377c7ce3c41cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Costo: 300
 --- !u!1 &5849513021403114327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3297,6 +3339,7 @@ GameObject:
   - component: {fileID: 1766746185849562785}
   - component: {fileID: 6797327675463606450}
   - component: {fileID: 8123132127990528761}
+  - component: {fileID: 7068633281223302522}
   m_Layer: 5
   m_Name: BotonTorre1
   m_TagString: Untagged
@@ -3322,7 +3365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: 113}
+  m_AnchoredPosition: {x: 30, y: 113}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1766746185849562785
@@ -3431,6 +3474,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7068633281223302522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153683929120517748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b07778dfdc43b14da377c7ce3c41cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Costo: 100
 --- !u!1 &7342535746759200879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,8 +3554,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pause
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09f0518967e8a824794ee3c29a776158, type: 2}
+  m_sharedMaterial: {fileID: -1965837218556662869, guid: 09f0518967e8a824794ee3c29a776158, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4136,6 +4192,7 @@ GameObject:
   - component: {fileID: 3581540875951828276}
   - component: {fileID: 6497069346540641909}
   - component: {fileID: 4685392442249367875}
+  - component: {fileID: 7323482841501743729}
   m_Layer: 5
   m_Name: BotonTorre2
   m_TagString: Untagged
@@ -4270,3 +4327,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7323482841501743729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815988001178059618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b07778dfdc43b14da377c7ce3c41cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Costo: 200
