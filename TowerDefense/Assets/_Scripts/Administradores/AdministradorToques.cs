@@ -87,6 +87,16 @@ public class AdministradorToques : MonoBehaviour
                 hit.transform.gameObject.GetComponent<Renderer>().material = materialSeleccionado;
                 administradorUI.MostrarMenuTorres();
                 administradorTorres.plataformaSeleccionada = hit.transform.gameObject;
+                var lstBotonesTorres = GameObject.FindObjectsByType<BotonTorre>(FindObjectsInactive.Include, FindObjectsSortMode.InstanceID);
+                var lstTorresHijas = administradorTorres.plataformaSeleccionada.transform;
+                foreach (var objBotonesTorres in lstBotonesTorres)
+                {
+                    objBotonesTorres.TorreSeleccionada = false;
+                    for (var i = 0; i < lstTorresHijas.childCount && !objBotonesTorres.TorreSeleccionada; i++)
+                    {
+                        objBotonesTorres.TorreSeleccionada = lstTorresHijas.GetChild(i).gameObject.GetComponent<_Tower>().NombreTorre == objBotonesTorres.NombreTorre;
+                    }
+                }
             }
         }
         else

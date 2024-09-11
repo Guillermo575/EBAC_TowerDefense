@@ -8,6 +8,7 @@ public class _Tower : MonoBehaviour
 {
     [HideInInspector] public GameManager gameManager;
     [HideInInspector] public _Enemy enemigo;
+    public String NombreTorre;
     public event EnemigoObjetivoActualizado EnEnemigoObjetivoActualizado;
     public GameObject prefabbala;
     public List<GameObject> puntasCanon;

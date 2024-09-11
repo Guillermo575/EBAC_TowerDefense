@@ -15,4 +15,4 @@ MonoBehaviour:
   MinVolume: -40
   MaxVolume: -40
   VolumenSonido: 0
-  VolumenMusica: -30
+  VolumenMusica: 0

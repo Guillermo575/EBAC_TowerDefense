@@ -47,7 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 8c4c8df017a0ed941ba2da3b06d2472f, type: 2}
   opciones: {fileID: 11400000, guid: 25757b7fedfa18e418dc5d2ea4d0b9dc, type: 2}
-  audioSource: {fileID: 0}
 --- !u!82 &4467357905498621558
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63,7 +62,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   enemigo: {fileID: 0}
+  NombreTorre: Torre2
   prefabbala: {fileID: 7346964461897701355, guid: 9b1744b5539e8e74786a9f31ae2c3fad, type: 3}
   puntasCanon:
   - {fileID: 8820042271034895262}

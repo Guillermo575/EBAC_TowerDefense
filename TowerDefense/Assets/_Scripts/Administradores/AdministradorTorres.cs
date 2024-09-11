@@ -82,8 +82,19 @@ public class AdministradorTorres : MonoBehaviour
     {
         int indiceTorre = (int)torreSeleccionada;
         var prefabTorre = prefabTorres[indiceTorre].GetComponent<_Tower>();
-        if (plataforma.transform.childCount == 0 && gameManager.GetRecursos() >= prefabTorre.CostoInstalacion)
+        for (var i = 0; i < plataforma.transform.childCount; i++)
         {
+            if (prefabTorre.NombreTorre == plataforma.transform.GetChild(i).gameObject.GetComponent<_Tower>().NombreTorre) return;
+        }
+        if (gameManager.GetRecursos() >= prefabTorre.CostoInstalacion)
+        {
+            if (plataforma.transform.childCount > 0)
+            {
+                for (var i = 0; i < plataforma.transform.childCount; i++)
+                {
+                    GameObject.Destroy(plataforma.transform.GetChild(i).gameObject);
+                }
+            }
             gameManager.ModificarRecursos(-prefabTorre.CostoInstalacion);
             Debug.Log("Creando Torre");
             Vector3 posparaInstanciar = plataforma.transform.position;

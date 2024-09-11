@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   enemigo: {fileID: 0}
+  NombreTorre: Torre4
   prefabbala: {fileID: 456343279591412553, guid: d154141132f0f4a4ea0b3bd166edad29, type: 3}
   puntasCanon:
   - {fileID: 762283028017393405}
