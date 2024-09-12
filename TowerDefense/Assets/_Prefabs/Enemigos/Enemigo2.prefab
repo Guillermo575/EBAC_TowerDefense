@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 80
   damage: 10
-  recursosGanados: 200
+  recursosGanados: 50
   lstClipSpawn:
   - {fileID: 8300000, guid: 441fe661d6356f34eb87b7a26a654f0e, type: 3}
   - {fileID: 8300000, guid: f20a69d8d0a574a4b95294db748c94ad, type: 3}

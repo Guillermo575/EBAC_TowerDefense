@@ -2402,6 +2402,18 @@ PrefabInstance:
       propertyPath: ConfigHorda.Array.data[0].enemigosPorOleada
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMaximo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMinimo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.1
@@ -3105,6 +3117,26 @@ PrefabInstance:
     - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: ConfigHorda.Array.data[0].enemigosPorOleada
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].enemigosPorOleada
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].TiempoEsperaSpawnMaximo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].TiempoEsperaSpawnMinimo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMaximo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMinimo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4024,6 +4056,30 @@ PrefabInstance:
     - target: {fileID: 700877741702032340, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_Name
       value: AdminSpawnEnemigos
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[0].TiempoEsperaSpawnMaximo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[0].TiempoEsperaSpawnMinimo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].TiempoEsperaSpawnMaximo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].TiempoEsperaSpawnMinimo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMaximo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMinimo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x

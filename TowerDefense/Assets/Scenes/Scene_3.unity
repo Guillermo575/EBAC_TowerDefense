@@ -1252,7 +1252,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 27810882}
+  m_Mesh: {fileID: 910702617}
 --- !u!33 &215667722
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -1862,6 +1862,150 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdminSpawnEnemigos (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[0].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].enemigosPorOleada
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.871269
@@ -1872,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.9
+      value: -56.3
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2853,6 +2997,150 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdminSpawnEnemigos (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[0].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].enemigosPorOleada
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].enemigosPorOleada
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].enemigosPorOleada
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.871269
@@ -3038,6 +3326,138 @@ PrefabInstance:
     - target: {fileID: 700877741702032340, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_Name
       value: AdminSpawnEnemigos (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].enemigosPorOleada
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].enemigosPorOleada
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3540,6 +3960,138 @@ PrefabInstance:
     - target: {fileID: 700877741702032340, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_Name
       value: AdminSpawnEnemigos (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].enemigosPorOleada
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].enemigosPorOleada
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4391,6 +4943,150 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdminSpawnEnemigos (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[0].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[1].enemigosPorOleada
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].enemigosPorOleada
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].enemigosPorOleada
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].enemigosPorOleada
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.8
@@ -4789,6 +5485,146 @@ PrefabInstance:
     - target: {fileID: 700877741702032340, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_Name
       value: AdminSpawnEnemigos
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[0].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].enemigosPorOleada
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].enemigosPorOleada
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].enemigosPorOleada
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMaximo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].TiempoEsperaSpawnMinimo
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].Peso
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].Peso
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].Peso
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 550427568623862402, guid: 58c04b73ec12016468abe1a1df4fe2fb, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 3837563153543785387, guid: cbc05eb18eb58a74ab12b5119a79553a, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 147864293892529931, guid: 036d9e369f1b8d742b0c32c26a21e587, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1457633022641412652, guid: c9977aa30c8b9c440b3f6c6d8a1519a2, type: 3}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[3].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[4].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
