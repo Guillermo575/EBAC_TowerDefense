@@ -1979,7 +1979,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.26666668
+  m_VoxelSize: 0.13333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c1454d40dc3b3634097604fcba3d98eb, type: 2}
   m_BuildHeightMesh: 0
@@ -2878,6 +2878,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].enemigosPorOleada
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: ConfigHorda.Array.data[0].TiempoEsperaSpawnMaximo
       value: 4
       objectReference: {fileID: 0}
@@ -2892,6 +2896,26 @@ PrefabInstance:
     - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: ConfigHorda.Array.data[1].TiempoEsperaSpawnMinimo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMaximo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMinimo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[2].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[2].lstEnemigos.Array.data[3].PosicionFijo.Array.data[1]'
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3460,6 +3484,10 @@ PrefabInstance:
       value: AdminSpawnEnemigos
       objectReference: {fileID: 0}
     - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].enemigosPorOleada
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: ConfigHorda.Array.data[0].TiempoEsperaSpawnMaximo
       value: 4
       objectReference: {fileID: 0}
@@ -3469,15 +3497,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: ConfigHorda.Array.data[1].TiempoEsperaSpawnMaximo
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: ConfigHorda.Array.data[1].TiempoEsperaSpawnMinimo
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMaximo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].TiempoEsperaSpawnMinimo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: ConfigHorda.Array.data[2].lstEnemigos.Array.data[3].PosicionFijo.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[2].lstEnemigos.Array.data[2].PosicionFijo.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[2].lstEnemigos.Array.data[2].PosicionFijo.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[2].lstEnemigos.Array.data[3].PosicionFijo.Array.data[0]'
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171491917804410695, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
+      propertyPath: 'ConfigHorda.Array.data[2].lstEnemigos.Array.data[3].PosicionFijo.Array.data[1]'
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.871269
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3485,7 +3541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21
+      value: -22.7
       objectReference: {fileID: 0}
     - target: {fileID: 5768804448931699611, guid: 3afe0a0f4c8feb14f94d5d9113949d6d, type: 3}
       propertyPath: m_LocalRotation.w

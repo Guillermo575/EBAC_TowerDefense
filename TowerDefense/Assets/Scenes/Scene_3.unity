@@ -5295,6 +5295,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7370217445090587830}
     - target: {fileID: 4035076623719984455, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
+      propertyPath: ClipBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: d7e4d8c93cb31674483b8b71730a913e, type: 3}
+    - target: {fileID: 4035076623719984455, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
       propertyPath: recursos
       value: 200
       objectReference: {fileID: 0}

@@ -11,6 +11,7 @@ public class EnemyBoss : _Enemy
     internal override void Update()
     {
         base.Update();
+        GetComponent<NavMeshAgent>().speed = vida < vidaMaxima / 2 ? 1f : 2;
     }
     internal override void OnCollisionEnter(Collision collision)
     {
