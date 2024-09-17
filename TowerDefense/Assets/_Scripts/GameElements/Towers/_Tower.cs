@@ -36,7 +36,7 @@ public class _Tower : MonoBehaviour
     }
     public void Apuntar()
     {
-        transform.LookAt(enemigo.transform);
+        transform.LookAt(new Vector3(enemigo.transform.position.x, transform.position.y, enemigo.transform.position.z));
     }
     public virtual void Disparar()
     {
@@ -50,34 +50,50 @@ public class _Tower : MonoBehaviour
     }
     private void ActualizarObjetivo()
     {
-        float distanciaMasCorta = float.MaxValue;
-        _Enemy enemigoMasCercano = null;
-        var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
-        foreach (var enemigo in lstEnemy)
+        try
         {
-            float dist = Vector3.Distance(enemigo.transform.position, transform.position);
-            if (dist <= DistanciaRango && dist < distanciaMasCorta)
+            float distanciaMasCorta = float.MaxValue;
+            _Enemy enemigoMasCercano = null;
+            var lstEnemy = GameObject.FindObjectsByType<_Enemy>(FindObjectsSortMode.InstanceID);
+            foreach (var enemigo in lstEnemy)
             {
-                distanciaMasCorta = dist;
-                enemigoMasCercano = enemigo;
+                float dist = Vector3.Distance(enemigo.transform.position, transform.position);
+                if (dist <= DistanciaRango && dist < distanciaMasCorta)
+                {
+                    distanciaMasCorta = dist;
+                    enemigoMasCercano = enemigo;
+                }
+            }
+            if (enemigoMasCercano != null)
+            {
+                enemigo = enemigoMasCercano;
+                Disparar();
+                if (EnEnemigoObjetivoActualizado != null)
+                {
+                    EnEnemigoObjetivoActualizado();
+                }
             }
         }
-        if (enemigoMasCercano != null)
+        catch (Exception ex)
         {
-            enemigo = enemigoMasCercano;
-            Disparar();
-            if (EnEnemigoObjetivoActualizado != null)
-            {
-                EnEnemigoObjetivoActualizado();
-            }
+            UnityEngine.Debug.Log("Rutina Actualizar Objetivo error");
+            return;
         }
     }
     public void IniciarRutinaObjetivo()
     {
-        if (TorreActivada) return;
-        if (gameManager.GetActualGameState() == GameManager.GameState.Action)
+        try
         {
-            StartCoroutine(CourutineActualizarObjetivo());
+            if (TorreActivada) return;
+            if (gameManager.GetActualGameState() == GameManager.GameState.Action)
+            {
+                StartCoroutine(CourutineActualizarObjetivo());
+            }
+        }
+        catch (Exception ex)
+        {
+            UnityEngine.Debug.Log("Rutina Objetivo error");
+            return;
         }
     }
     IEnumerator CourutineActualizarObjetivo()

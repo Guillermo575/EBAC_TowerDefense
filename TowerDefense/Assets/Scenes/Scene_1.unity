@@ -3293,7 +3293,7 @@ PrefabInstance:
       objectReference: {fileID: 7370217445090587830}
     - target: {fileID: 4035076623719984455, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
       propertyPath: recursos
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4035076623719984455, guid: 17bf33c326c32dd43bd3e22d0863f20a, type: 3}
       propertyPath: referenciaObjetivo
