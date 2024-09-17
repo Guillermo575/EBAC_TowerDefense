@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Opciones", menuName = "Tools/Opciones", order = 1)]
 public class Opciones : ObjetoPersistente
 {
+    [HideInInspector] public float MinVolume = -60f;
+    [HideInInspector] public float MaxVolume = -60f;
     public float VolumenSonido = 0;
     public float VolumenMusica = 0;
     public enum dificultad
@@ -13,12 +15,14 @@ public class Opciones : ObjetoPersistente
         normal,
         dificil
     }
-    public void CambiarVolumenSonido(float nuevaVolumenSonido)
+    public void CambiarVolumenMusica(float nuevaVolumen)
     {
-        VolumenSonido = nuevaVolumenSonido;
+        VolumenMusica = nuevaVolumen;
+        AudioManager.GetSingleton().SetBGMVolume(VolumenMusica);
     }
-    public void CambiarVolumenMusica(float nuevaVolumenMusica)
+    public void CambiarVolumenSonido(float nuevaVolumen)
     {
-        VolumenMusica = nuevaVolumenMusica;
+        VolumenSonido = nuevaVolumen;
+        AudioManager.GetSingleton().SetSFXVolume(VolumenSonido);
     }
 }

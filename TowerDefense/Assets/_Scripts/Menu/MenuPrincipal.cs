@@ -17,6 +17,10 @@ public class MenuPrincipal : _Menu
     {
         SceneManager.LoadScene(1);
     }
+    public void BackToTitle()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void MostrarOpciones()
     {
         menuManager.ShowMenu(menuManager.menuOpciones);
@@ -28,6 +32,10 @@ public class MenuPrincipal : _Menu
     public void BackMenu()
     {
         menuManager.BackMenu();
+    }
+    public void MostrarCreditos()
+    {
+        menuManager.ShowMenu(menuManager.menuCreditos);
     }
     #endregion
 }

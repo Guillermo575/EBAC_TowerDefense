@@ -12,7 +12,7 @@ public class EnemyZombieCop : _Enemy
     {
         base.Update();
         animator.SetBool("IsHalfLife", vida < vidaMaxima/2);
-        GetComponent<NavMeshAgent>().speed = vida < vidaMaxima / 2 ? 1 : 2;
+        GetComponent<NavMeshAgent>().speed = vida < vidaMaxima / 2 ? 0.5f : 2;
     }
     internal override void OnCollisionEnter(Collision collision)
     {

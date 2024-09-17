@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 public class MenuManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class MenuManager : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
-    public static MenuManager GetManager()
+    public static MenuManager GetSingleton()
     {
         return SingletonMenuManager;
     }
@@ -36,6 +37,7 @@ public class MenuManager : MonoBehaviour
     public GameObject menuPausa;
     public GameObject menuFinNivel; //Ganar
     public GameObject menuFinJuego; //Perder
+    public GameObject menuCreditos; //Perder
     #endregion
 
     #region Start

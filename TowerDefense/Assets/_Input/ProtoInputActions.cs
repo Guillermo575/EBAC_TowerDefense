@@ -806,7 +806,7 @@ namespace UnityEngine.InputSystem
                     ""id"": ""07d4d11e-0e82-4cc7-b610-df83d5d61018"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -824,7 +824,7 @@ namespace UnityEngine.InputSystem
                     ""name"": """",
                     ""id"": ""995a9ab2-a360-4123-8f1a-3fe12dc935d8"",
                     ""path"": ""<Touchscreen>/Press"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""Touch"",
                     ""action"": ""Toque"",

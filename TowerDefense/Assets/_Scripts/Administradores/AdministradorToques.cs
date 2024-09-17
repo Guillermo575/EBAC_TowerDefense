@@ -22,18 +22,25 @@ public class AdministradorToques : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
-    public static AdministradorToques GetManager()
+    public static AdministradorToques GetSingleton()
     {
         return SingletonGameManager;
     }
     #endregion
 
+    #region Variables
     public InputActionAsset inputs;
+    public Material materialPlataforma;
+    public Material materialSeleccionado;
     private InputAction toque;
     private InputAction posicionToque;
     private Camera mainCam;
     public delegate void PlataformaTocada(GameObject plataforma);
-    public event PlataformaTocada EnPlataformaTocada;
+    private AdministradorUI administradorUI;
+    private AdministradorTorres administradorTorres;
+    private GameManager gameManager;
+    #endregion
+
     private void OnEnable()
     {
         TouchSimulation.Enable();
@@ -54,6 +61,9 @@ public class AdministradorToques : MonoBehaviour
     }
     private void Start()
     {
+        gameManager = GameManager.GetSingleton();
+        administradorUI = AdministradorUI.GetSingleton();
+        administradorTorres = AdministradorTorres.GetSingleton();
         mainCam = Camera.main;
     }
     private void Toque(InputAction.CallbackContext obj)
@@ -66,12 +76,26 @@ public class AdministradorToques : MonoBehaviour
         if (Physics.Raycast(rayoPantalla, out hit, Mathf.Infinity))
         {
             Debug.Log(hit.transform.gameObject.name);
-            if (hit.transform.gameObject.tag == "Plataforma")
+            if (hit.transform.gameObject.tag == "Plataforma" && !administradorUI.menuTorres.activeSelf)
             {
-                Debug.Log("Plataforma tocada");
-                if (EnPlataformaTocada != null)
+                if (gameManager.IsGamePause) return;
+                var lstPlatform = GameObject.FindGameObjectsWithTag("Plataforma");
+                foreach (var objplatform in lstPlatform) 
+                { 
+                    objplatform.GetComponent<Renderer>().material = materialPlataforma;
+                }
+                hit.transform.gameObject.GetComponent<Renderer>().material = materialSeleccionado;
+                administradorUI.MostrarMenuTorres();
+                administradorTorres.plataformaSeleccionada = hit.transform.gameObject;
+                var lstBotonesTorres = GameObject.FindObjectsByType<BotonTorre>(FindObjectsInactive.Include, FindObjectsSortMode.InstanceID);
+                var lstTorresHijas = administradorTorres.plataformaSeleccionada.transform;
+                foreach (var objBotonesTorres in lstBotonesTorres)
                 {
-                    EnPlataformaTocada(hit.transform.gameObject);
+                    objBotonesTorres.TorreSeleccionada = false;
+                    for (var i = 0; i < lstTorresHijas.childCount && !objBotonesTorres.TorreSeleccionada; i++)
+                    {
+                        objBotonesTorres.TorreSeleccionada = lstTorresHijas.GetChild(i).gameObject.GetComponent<_Tower>().NombreTorre == objBotonesTorres.NombreTorre;
+                    }
                 }
             }
         }

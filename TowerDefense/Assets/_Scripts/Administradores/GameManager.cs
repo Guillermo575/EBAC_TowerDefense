@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
-    public static GameManager GetManager()
+    public static GameManager GetSingleton()
     {
         return SingletonGameManager;
     }
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     #region Privados
     private AudioManager audioManager;
     public MathRNG mathRNG = new MathRNG(3241);
+    public MathRNG mathRNGOther = new MathRNG(3241);
     private int enemigosBaseDerrotados;
     private int enemigosJefeDerrotados;
     private int RondaActual = 0;
@@ -44,6 +45,10 @@ public class GameManager : MonoBehaviour
     public int GetRondaActual()
     {
         return RondaActual;
+    }
+    public int GetRondasTotales()
+    {
+        return RondasTotales;
     }
     public int GetEnemigosBaseDerrotados()
     {
@@ -119,6 +124,9 @@ public class GameManager : MonoBehaviour
     public event GameEvent OnWaveEnd;
     public delegate void RecursosModificados();
     public event RecursosModificados EnRecursosModificados;
+    public AudioClip ClipBGM;
+    public AudioClip ClipLevelCleared;
+    public AudioClip ClipGameOver;
     public void StartGame()
     {
         _GameEnd = false;
@@ -193,12 +201,12 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        audioManager = AudioManager.GetManager();
+        audioManager = AudioManager.GetSingleton();
         if (audioManager != null)
         {
-            OnGamePause += delegate { audioManager.BGM.Pause(); audioManager.SFX.Pause(); };
-            OnGameResume += delegate { audioManager.BGM.UnPause(); audioManager.SFX.UnPause(); };
-            OnGameEnd += delegate { audioManager.BGM.Stop(); audioManager.SFX.Stop(); };
+            OnWaveStart += delegate { audioManager.PlaySound(ClipBGM); };
+            OnGameLevelCleared += delegate { audioManager.PlaySound(ClipLevelCleared); };
+            OnGameOver += delegate { audioManager.PlaySound(ClipGameOver); };
         }
         OnGameStart();
         WavePreparation();

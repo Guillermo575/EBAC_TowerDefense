@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objetivo: {fileID: 0}
+  plataformaSeleccionada: {fileID: 0}
   torreSeleccionada: 0
   prefabTorres:
   - {fileID: 751021043722471600, guid: c2f40e5c1f08a154dad52215cd42e957, type: 3}
@@ -97,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: -944628639613478452, guid: 2bfec84904e748f458904c3ef0f3b91c, type: 3}
+  materialPlataforma: {fileID: 2100000, guid: e9886dc53f9268448adb4437c286cb8b, type: 2}
+  materialSeleccionado: {fileID: 2100000, guid: 88821722555252c4ca4fb07a5f1889f0, type: 2}
 --- !u!1 &5274960440219107649
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +189,7 @@ GameObject:
   - component: {fileID: 4629759975911827312}
   - component: {fileID: 4035076623719984455}
   - component: {fileID: 5871314640607927440}
+  - component: {fileID: 8217810667743846335}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -224,7 +228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   referenciaObjetivo: {fileID: 0}
-  recursos: 800
+  recursos: 8000
+  ClipBGM: {fileID: 8300000, guid: 6e60a3c8680e06e4b966d04330c0ac15, type: 3}
+  ClipLevelCleared: {fileID: 8300000, guid: ea900ee0f1e994748874ff026a6b9690, type: 3}
+  ClipGameOver: {fileID: 8300000, guid: 7321968c6db797d468bda56355f1a098, type: 3}
 --- !u!114 &5871314640607927440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +245,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GPGSText: {fileID: 0}
+--- !u!114 &8217810667743846335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881219571664654989}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0317be208861e241ae201b313e9fb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

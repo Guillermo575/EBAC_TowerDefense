@@ -8,7 +8,7 @@ public class _Menu : MonoBehaviour
     #region Start
     protected virtual void Start()
     {
-        menuManager = MenuManager.GetManager();
+        menuManager = MenuManager.GetSingleton();
     }
     #endregion
 }

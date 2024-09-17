@@ -16,7 +16,7 @@ public class MenuFinNivel : _Menu
         base.Start();
         if (menuManager != null)
         {
-            gameManager = GameManager.GetManager();
+            gameManager = GameManager.GetSingleton();
             if (gameManager != null)
             {
                 gameManager.OnGameLevelCleared += delegate { menuManager.ShowMenu(menuManager.menuFinNivel); };

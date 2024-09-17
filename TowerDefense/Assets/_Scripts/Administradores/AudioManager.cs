@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,47 +24,41 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
-    public static AudioManager GetManager()
+    public static AudioManager GetSingleton()
     {
         return SingletonGameManager;
     }
     #endregion
 
-    public Opciones opciones;
-    public AudioSource BGM;
-    public AudioSource SFX;
+    #region Variables
     public AudioMixer audioMixer;
+    public Opciones opciones;
+    private AudioSource audioSource;
+    #endregion
 
+    #region Awake & Start
     void Awake()
     {
         CreateSingleton();
     }
-    void Start()
+    private void Start()
     {
-        UpdateSound();
+        audioSource = this.GetComponentInParent<AudioSource>();
+        SetBGMVolume(opciones.VolumenMusica);
+        SetSFXVolume(opciones.VolumenSonido);        
     }
-    private void Update()
+    #endregion
+
+    #region Change Volume
+    public void SetBGMVolume(float volume)
     {
-        UpdateSound();
+        audioMixer.SetFloat("BGMVol", volume);
     }
-    private void UpdateSound()
+    public void SetSFXVolume(float volume)
     {
-        BGM.volume = DecibelToLinear(opciones.VolumenMusica);
-        SFX.volume = DecibelToLinear(opciones.VolumenSonido);
-        audioMixer.SetFloat("BGMVol", opciones.VolumenMusica);
-        audioMixer.SetFloat("SFXVol", opciones.VolumenSonido);
+        audioMixer.SetFloat("SFXVol", volume);
     }
-    private void PlayBGM(AudioClip clip)
-    {
-        BGM.clip = clip;
-        BGM.Play();
-    }
-    public void PlaySoundEffect(AudioClip clip)
-    {
-        SFX.clip = clip;
-        SFX.Play();
-    }
-    private float LinearToDecibel(float linear)
+    public static float LinearToDecibel(float linear)
     {
         float dB;
         if (linear != 0)
@@ -72,10 +67,27 @@ public class AudioManager : MonoBehaviour
             dB = -144.0f;
         return dB;
     }
-    private float DecibelToLinear(float dB)
+    public static float DecibelToLinear(float dB)
     {
         if (dB == -80f) return 0;
         float linear = Mathf.Pow(10.0f, dB / 20.0f);
         return linear;
     }
+    #endregion
+
+    #region Play Sound
+    public void PlaySound(AudioClip clip, Boolean ReiniciarRepetido = false)
+    {
+        try
+        {
+            if (clip.name == audioSource.clip.name && !ReiniciarRepetido) return;
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+        catch (Exception e)
+        {
+            UnityEngine.Debug.LogException(e);
+        }
+    }
+    #endregion
 }

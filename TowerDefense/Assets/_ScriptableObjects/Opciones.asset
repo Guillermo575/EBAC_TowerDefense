@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fa6ca1dd11261478ff61b01674b697, type: 3}
   m_Name: Opciones
   m_EditorClassIdentifier: 
+  MinVolume: -40
+  MaxVolume: -40
   VolumenSonido: 0
   VolumenMusica: 0

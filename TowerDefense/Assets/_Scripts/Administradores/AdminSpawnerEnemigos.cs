@@ -9,6 +9,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region Variables
     private GameManager gameManager;
     public List<HordaEnemigos> ConfigHorda;
+    public GameObject gameBase;
     #endregion
 
     #region Getters
@@ -35,7 +36,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #region Start & Update
     void Start()
     {
-        gameManager = GameManager.GetManager();
+        gameManager = GameManager.GetSingleton();
         gameManager.OnWaveStart += delegate { IniciarOla(); };
         foreach (var objHorda in ConfigHorda)
         {
@@ -44,6 +45,14 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     }
     void Update()
     {
+        if (getHordaActual().enemigosPorOleada == 0)
+        {
+            gameBase.SetActive(false);
+        }
+        else
+        {
+            gameBase.SetActive(true);
+        }
     }
     #endregion
 
@@ -112,7 +121,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
         {
             TiempoEsperaSpawnMinimo = TiempoEsperaSpawnMinimo <= 0 ? 0.5f : TiempoEsperaSpawnMinimo;
             TiempoEsperaSpawnMaximo = TiempoEsperaSpawnMaximo <= 0 ? 0.5f : TiempoEsperaSpawnMaximo;
-            var gameManager = GameManager.GetManager();
+            var gameManager = GameManager.GetSingleton();
             enemigosDuranteEstaOleada = enemigosPorOleada;
             int RangoAnterior = 0;
             for (int l = 0; l < lstEnemigos.Count; l++)
