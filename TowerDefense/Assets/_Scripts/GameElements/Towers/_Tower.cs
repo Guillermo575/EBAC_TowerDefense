@@ -76,7 +76,7 @@ public class _Tower : MonoBehaviour
         }
         catch (Exception ex)
         {
-            UnityEngine.Debug.Log("Rutina Actualizar Objetivo error");
+            UnityEngine.Debug.LogError("Rutina Actualizar Objetivo error");
             return;
         }
     }
@@ -92,7 +92,7 @@ public class _Tower : MonoBehaviour
         }
         catch (Exception ex)
         {
-            UnityEngine.Debug.Log("Rutina Objetivo error");
+            UnityEngine.Debug.LogError("Rutina Objetivo error");
             return;
         }
     }
