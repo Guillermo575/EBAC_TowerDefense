@@ -17,6 +17,10 @@ public class MenuPrincipal : _Menu
     {
         SceneManager.LoadScene(1);
     }
+    public void BackToTitle()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void MostrarOpciones()
     {
         menuManager.ShowMenu(menuManager.menuOpciones);

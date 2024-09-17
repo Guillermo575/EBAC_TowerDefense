@@ -37,6 +37,7 @@ Transform:
   - {fileID: 3433439522195689021}
   - {fileID: 764956047542878261}
   - {fileID: 3966988488314787170}
+  - {fileID: 6901540583540040240}
   - {fileID: 8755809213857905091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -231,6 +232,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5565606197528508846}
     m_Modifications:
+    - target: {fileID: 2161325444614337110, guid: f2423fee18564c94bb602ba09ee4fce9, type: 3}
+      propertyPath: m_text
+      value: 'Title - Agecaf
+
+        Preparatives - brandon75689
+
+        Game Over
+        - Kim Lightyear
+
+        Victory - celestialghost8
+
+        Scene 1 - Alexandr
+        Zhelanov
+
+        Scene 2 - Tri-Tachyon
+
+        Scene 3 - Zander Boriega
+
+        Credits
+        - MAOU
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3833488743623318380, guid: f2423fee18564c94bb602ba09ee4fce9, type: 3}
       propertyPath: m_Name
       value: MenuCreditos
@@ -293,6 +317,72 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6535035104393848698, guid: f2423fee18564c94bb602ba09ee4fce9, type: 3}
   m_PrefabInstance: {fileID: 2379662635317923864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4281179828801603578
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5565606197528508846}
+    m_Modifications:
+    - target: {fileID: 2333405888219082161, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_Name
+      value: MenuFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642257194398639724, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+--- !u!4 &6901540583540040240 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7255013983106704842, guid: d37410832619cf041ab79e47eeff4836, type: 3}
+  m_PrefabInstance: {fileID: 4281179828801603578}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4442724953456603299
 PrefabInstance:
