@@ -2,6 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Aqui se gestiona la creacion y borrado de las torres
+ */
 public class AdministradorTorres : MonoBehaviour
 {
 

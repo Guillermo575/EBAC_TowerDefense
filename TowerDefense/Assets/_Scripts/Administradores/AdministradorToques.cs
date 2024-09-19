@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+/**
+ * @file
+ * @brief Funciones relacionadas con el uso de la pantalla Touch
+ */
 public class AdministradorToques : MonoBehaviour
 {
     #region Singleton

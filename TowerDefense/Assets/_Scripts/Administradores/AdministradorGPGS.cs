@@ -5,6 +5,10 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using TMPro;
 using UnityEngine.SceneManagement;
+/**
+ * @file
+ * @brief Aqui se gestiona las funciones principales de Google Plays
+ */
 public class AdministradorGPGS : MonoBehaviour
 {
     private GameManager gameManager;
