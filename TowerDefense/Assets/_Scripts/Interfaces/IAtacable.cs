@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Interfaz
+ * @brief Interfaz para objetos que pueden ser atacados
  */
 public interface IAtacable
 {

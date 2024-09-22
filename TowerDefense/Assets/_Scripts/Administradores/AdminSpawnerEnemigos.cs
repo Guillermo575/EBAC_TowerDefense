@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase que administra la aparicion de enemigos en una zona de juego especifica
+ */
 public class AdminSpawnerEnemigos : MonoBehaviour
 {
     #region Variables

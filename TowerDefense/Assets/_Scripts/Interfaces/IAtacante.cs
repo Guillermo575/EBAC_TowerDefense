@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /**
  * @file
- * @brief Interfaz
+ * @brief Interfaz para atacar a los objetos de la interfaz IAtacable
  */
 public interface IAtacante
 {

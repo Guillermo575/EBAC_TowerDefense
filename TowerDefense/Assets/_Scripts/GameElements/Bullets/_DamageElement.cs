@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 /**
  * @file
- * @brief Clase principal que se encarga de gestionar los objetos que producen daño a los enemigos o al objetivo
+ * @brief Clase principal que se encarga de gestionar los objetos que atacan a los enemigos o al objetivo
  */
 public class _DamageElement : MonoBehaviour, IAtacante
 {
