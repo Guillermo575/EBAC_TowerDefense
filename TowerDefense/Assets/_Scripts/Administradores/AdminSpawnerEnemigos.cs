@@ -7,25 +7,32 @@ using UnityEngine;
 public class AdminSpawnerEnemigos : MonoBehaviour
 {
     #region Variables
+    /** @hidden */
     private GameManager gameManager;
+    /** Cada elemento de la lista es una horda y cada horda tendra la configuracion de enemigos que apareceran */
     public List<HordaEnemigos> ConfigHorda;
+    /** Objeto que representa el lugar donde apareceran los enemigos */
     public GameObject gameBase;
     #endregion
 
     #region Getters
+    /** Obtiene la horda que se esta desplegando*/
     public HordaEnemigos getHordaActual()
     {
         if (gameManager.GetRondaActual() >= ConfigHorda.Count) return null;
         return ConfigHorda[gameManager.GetRondaActual()];
     }
+    /** Indica si la oleada acaba de iniciar*/
     public bool getOleadaIniciada()
     {
         return !getOleadaFinalizada();
     }
+    /** Indica cuandas hordas posee*/
     public int getRondasTotales()
     {
         return ConfigHorda.Count;
     }
+    /** Indica si ya no hay mas hordas por desplegar*/
     public bool getOleadaFinalizada()
     {
         if(getHordaActual() == null) return false;
@@ -34,6 +41,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #endregion
 
     #region Start & Update
+    /** @hidden */
     void Start()
     {
         gameManager = GameManager.GetSingleton();
@@ -43,6 +51,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
             objHorda.Initialize();
         }
     }
+    /** @hidden */
     void Update()
     {
         if (getHordaActual().enemigosPorOleada == 0)
@@ -57,6 +66,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #endregion
 
     #region General
+    /** Iniciar la corutina que crea los enemigos */
     public void IniciarOla()
     {
         if (!getOleadaFinalizada())
@@ -65,6 +75,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
             StartCoroutine(CourutineSpawn());
         }
     }
+    /** Corutina que se encarga de la creacion de enemigos, el tiempo de espera y el enemigo dependera de como se configuro en el objeto ConfigHorda*/
     IEnumerator CourutineSpawn()
     {
         var HordaActual = getHordaActual();
@@ -77,6 +88,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
             HordaActual.enemigosDuranteEstaOleada--;
         }
     }
+    /** @hidden */
     public void InstanciarEnemigo()
     {
         var HordaActual = getHordaActual();
@@ -96,17 +108,31 @@ public class AdminSpawnerEnemigos : MonoBehaviour
     #endregion
 
     #region Class HordaEnemigos
+    /** Clase que contiene la forma en que iran apareciendo los enemigos */
     [Serializable]
     public class HordaEnemigos
     {
+        /** Lista de la clase SpawnHorda*/
         public List<SpawnHorda> lstEnemigos;
+        /** indica cuantos enemigos apareceran en esta Horda */
         public int enemigosPorOleada;
+        /** Tiempo minimo de espera para la aparicion del enemigo */
         public float TiempoEsperaSpawnMinimo = 2f;
+        /** Tiempo maximo de espera para la aparicion del enemigo */
         public float TiempoEsperaSpawnMaximo = 2f;
+        /** Indica si aun quedan enemigos por desplegar*/
         public bool EnemigosPendientes { get { return enemigosDuranteEstaOleada > 0; } }
+        /** @hidden*/
         internal int[] IndexHorda;
+        /** @hidden*/
         internal int SumaPesos;
+        /** @hidden*/
         internal int enemigosDuranteEstaOleada;
+        /** Clase que guarda los datos del enemigo
+         @param prefab: el objeto fisico que contiene los datos del enemigo
+         @param Peso: Los enemigos que apareceran tendran una aleatoridad y entre mayor sea este numero mas probabilidades tiene de que se despliegue
+         @param PosicionFijo: numero en el que quiere que aparezca de forma obligatoria el enemigo
+         */
         [Serializable]
         public class SpawnHorda
         {
@@ -117,6 +143,7 @@ public class AdminSpawnerEnemigos : MonoBehaviour
             internal int RangoMinimo;
             internal int RangoMaximo;
         }
+        /** Clase que hace los calculos de aleatoridad para indicar cuales enemigos y en que orden se crearan*/
         public void Initialize()
         {
             TiempoEsperaSpawnMinimo = TiempoEsperaSpawnMinimo <= 0 ? 0.5f : TiempoEsperaSpawnMinimo;
