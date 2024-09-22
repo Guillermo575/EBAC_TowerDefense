@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+/**
+ * @file
+ * @brief Clase principal que guarda los datos principales de los enemigos
+ */
 public class _Enemy : MonoBehaviour, IAtacante, IAtacable
 {
     internal Animator animator;

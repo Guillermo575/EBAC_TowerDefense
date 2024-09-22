@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Administrador que guarda y carga los objetos de la clase persistente
+ */
 public class AdministradorDePersistencia : MonoBehaviour
 {
     public List<ObjetoPersistente> ObjetosAGuardar;

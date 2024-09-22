@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+/**
+ * @file
+ * @brief Clase que usa los enemigos jefes
+ */
 public class EnemyBoss : _Enemy
 {
     internal override void Start()

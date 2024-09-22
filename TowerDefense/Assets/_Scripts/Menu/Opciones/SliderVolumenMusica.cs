@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+/**
+ * @file
+ * @brief Interfaz que cambia el volumen de la musica de fondo
+ */
 public class SliderVolumenMusica : MonoBehaviour
 {
     #region Variables

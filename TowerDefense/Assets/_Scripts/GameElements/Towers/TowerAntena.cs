@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase que modifica la clase torre para funcionar de forma distinta
+ */
 public class TowerAntena : _Tower, IAtacante
 {
     #region Variables

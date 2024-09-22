@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+/**
+ * @file
+ * @brief Menu que se abre al terminar el juego
+ */
 public class MenuFinNivel : _Menu
 {
     #region Variables

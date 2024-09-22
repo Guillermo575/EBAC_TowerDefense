@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using static AdministradorTorres;
+/**
+ * @file
+ * @brief Clase principal que guarda los datos principales de las torres
+ */
 public class _Tower : MonoBehaviour
 {
     [HideInInspector] public GameManager gameManager;

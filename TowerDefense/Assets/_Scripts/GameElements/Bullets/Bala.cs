@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase de la bala que disparan las torres
+ */
 public class Bala : _DamageElement
 {
     void Start()

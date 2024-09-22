@@ -2,6 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Aqui se gestiona los valores de musica y sonido
+ */
 [CreateAssetMenu(fileName = "Opciones", menuName = "Tools/Opciones", order = 1)]
 public class Opciones : ObjetoPersistente
 {
