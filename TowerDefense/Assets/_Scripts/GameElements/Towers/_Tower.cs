@@ -16,7 +16,7 @@ public class _Tower : MonoBehaviour
     public float TiempoCadencia = 3f;
     public float DistanciaRango = 5f;
     private bool TorreActivada = false;
-    private AudioSource SourceDisparo;
+    internal AudioSource SourceDisparo;
     public AudioClip clipSpawn;
     public AudioClip clipAttack;
     public virtual void Start()
