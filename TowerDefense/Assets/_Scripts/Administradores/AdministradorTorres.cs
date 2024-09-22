@@ -2,14 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Aqui se gestiona la creacion y borrado de las torres
+ */
 public class AdministradorTorres : MonoBehaviour
 {
 
     #region Singleton
+    /** @hidden */
     private static AdministradorTorres SingletonGameManager;
+    /** @hidden */
     private AdministradorTorres()
     {
     }
+    /** Aqui se crea el objeto singleton */
     private void CreateSingleton()
     {
         if (SingletonGameManager == null)
@@ -21,6 +28,7 @@ public class AdministradorTorres : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
+    /** Solo se puede crear un objeto de la clase AdministradorTorres, este metodo obtiene el objeto creado */
     public static AdministradorTorres GetSingleton()
     {
         return SingletonGameManager;
@@ -57,27 +65,34 @@ public class AdministradorTorres : MonoBehaviour
     //}
 
     #region Start & Update
+    /** @hidden */
     void Awake()
     {
         CreateSingleton();
     }
+    /** @hidden */
     void Start()
     {
         gameManager = GameManager.GetSingleton();
         referenciaSpawners = gameManager.getSpawners();
         lstTorresInstanciadas = new List<GameObject>();
     }
+    /** @hidden */
     void Update()
     {     
     }
     #endregion
 
     #region Crear Torre
+    /** Instancia la torre 
+        @param torre
+     */
     public void InstanciarTorre(int torre)
     {
         ConfigurarTorre(torre);
         CrearTorre(plataformaSeleccionada);
     }
+    /** @hidden */
     void CrearTorre(GameObject plataforma)
     {
         int indiceTorre = (int)torreSeleccionada;
@@ -104,6 +119,7 @@ public class AdministradorTorres : MonoBehaviour
             lstTorresInstanciadas.Add(torreInstanciada);
         }
     }
+    /** @hidden */
     public void ConfigurarTorre(int torre)
     {
         if (Enum.IsDefined(typeof(TorreSeleccionada), torre))

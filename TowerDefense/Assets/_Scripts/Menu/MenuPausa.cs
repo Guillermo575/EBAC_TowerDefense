@@ -5,6 +5,10 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+/**
+ * @file
+ * @brief Menu que se abre al pausar el juego
+ */
 public class MenuPausa : _Menu
 {
     #region Variables

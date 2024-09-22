@@ -4,13 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+/**
+ * @file
+ * @brief Funciones relacionadas con el uso de la pantalla Touch
+ */
 public class AdministradorToques : MonoBehaviour
 {
     #region Singleton
+    /** @hidden */
     private static AdministradorToques SingletonGameManager;
+    /** @hidden */
     private AdministradorToques()
     {
     }
+    /** Aqui se crea el objeto singleton */
     private void CreateSingleton()
     {
         if (SingletonGameManager == null)
@@ -22,6 +29,7 @@ public class AdministradorToques : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
+    /** Solo se puede crear un objeto de la clase AdministradorToques, este metodo obtiene el objeto creado */
     public static AdministradorToques GetSingleton()
     {
         return SingletonGameManager;
@@ -41,6 +49,7 @@ public class AdministradorToques : MonoBehaviour
     private GameManager gameManager;
     #endregion
 
+    /** @hidden */
     private void OnEnable()
     {
         TouchSimulation.Enable();
@@ -49,16 +58,19 @@ public class AdministradorToques : MonoBehaviour
         posicionToque = inputs.FindAction("PosicionToque");
         toque.performed += Toque;
     }
+    /** @hidden */
     private void OnDisable()
     {
         inputs.Disable();
         TouchSimulation.Disable();
         toque.performed -= Toque;
     }
+    /** @hidden */
     private void Awake()
     {
         CreateSingleton();        
     }
+    /** @hidden */
     private void Start()
     {
         gameManager = GameManager.GetSingleton();
@@ -66,6 +78,7 @@ public class AdministradorToques : MonoBehaviour
         administradorTorres = AdministradorTorres.GetSingleton();
         mainCam = Camera.main;
     }
+    /** Metodo que se llama al momento de tocar la pantalla, en caso de haber tocado una plataforma se abre el menu de torres*/
     private void Toque(InputAction.CallbackContext obj)
     {
         Vector2 poseToque2D = posicionToque.ReadValue<Vector2>();

@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase de la bala que disparan las torres, usa fisicas para moverse
+ */
 public class BalaCanon : _DamageElement
 {
     void Update()

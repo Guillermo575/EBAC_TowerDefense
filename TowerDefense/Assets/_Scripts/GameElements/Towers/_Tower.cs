@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using static AdministradorTorres;
+/**
+ * @file
+ * @brief Clase principal que guarda los datos principales de las torres
+ */
 public class _Tower : MonoBehaviour
 {
     [HideInInspector] public GameManager gameManager;
@@ -16,7 +20,7 @@ public class _Tower : MonoBehaviour
     public float TiempoCadencia = 3f;
     public float DistanciaRango = 5f;
     private bool TorreActivada = false;
-    private AudioSource SourceDisparo;
+    internal AudioSource SourceDisparo;
     public AudioClip clipSpawn;
     public AudioClip clipAttack;
     public virtual void Start()

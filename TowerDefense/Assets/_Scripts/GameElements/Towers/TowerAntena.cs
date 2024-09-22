@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase que modifica la clase torre para funcionar de forma distinta
+ */
 public class TowerAntena : _Tower, IAtacante
 {
     #region Variables
@@ -21,17 +25,22 @@ public class TowerAntena : _Tower, IAtacante
     }
     private void FixedUpdate()
     {
-        if (enemigo != null)
+        if (enemigo != null && enemigo.vida > 0)
         {
-            Disparar();
+            DispararRayo();
         }
         else
         {
             LRRayo.positionCount = 0;
+            ShootStoped = false;
+            TimeToStopThis = false;
+            StopCoroutine(CourutineDetenerDisparo());
         }
     }
-
     public override void Disparar()
+    {
+    }
+    public void DispararRayo()
     {
         if (!TimeToStopThis)
         {

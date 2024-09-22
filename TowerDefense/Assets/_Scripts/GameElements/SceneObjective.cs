@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase que guarda las funciones del objetivo del escenario, al destruirse pierdes el juego
+ */
 public class SceneObjective : MonoBehaviour, IAtacable
 {
     public int vida = 100;

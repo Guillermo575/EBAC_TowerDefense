@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+/**
+ * @file
+ * @brief Menu que se abre al iniciar la aplicacion
+ */
 public class MenuPrincipal : _Menu
 {
     #region Awake

@@ -5,6 +5,10 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using TMPro;
 using UnityEngine.SceneManagement;
+/**
+ * @file
+ * @brief Aqui se gestiona las funciones principales de Google Plays
+ */
 public class AdministradorGPGS : MonoBehaviour
 {
     private GameManager gameManager;
@@ -26,6 +30,9 @@ public class AdministradorGPGS : MonoBehaviour
             }
         };
     }
+    /**
+     * Metodo de pruebas para probar la autentificacion
+     */
     internal void ProcesarAutenticacion(SignInStatus status)
     {
         if (status == SignInStatus.Success)
@@ -37,6 +44,11 @@ public class AdministradorGPGS : MonoBehaviour
             GPGSText.text = $"Bad Auth";
         }
     }
+
+    /**
+     * Sirve para activar un logro\n 
+     * @param Logro: Id del logro de Google Plays
+     */
     internal void DesbloquearLogro(string Logro)
     {
         string mStatus;

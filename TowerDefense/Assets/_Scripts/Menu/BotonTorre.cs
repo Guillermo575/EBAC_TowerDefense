@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/**
+ * @file
+ * @brief Boton que sirve para instanciar las torres
+ */
 public class BotonTorre : MonoBehaviour
 {
     private GameManager gameManager;

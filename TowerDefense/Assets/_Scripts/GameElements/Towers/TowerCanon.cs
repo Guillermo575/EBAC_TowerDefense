@@ -1,4 +1,8 @@
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase que modifica la clase torre para funcionar de forma distinta disparando proyectiles en base a la fisica
+ */
 public class TowerCanon : _Tower
 {
     public override void Disparar()

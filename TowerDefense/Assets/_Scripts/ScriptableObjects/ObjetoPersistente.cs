@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+/**
+ * @file
+ * @brief Scriptable object con funciones de guardar y cargar cuando otro scriptable object hija es modificada dentro del juego
+ */
 public abstract class ObjetoPersistente : ScriptableObject
 {
     public void Guardar(string NameFile = null)

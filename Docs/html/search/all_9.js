@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['iatacable_0',['IAtacable',['../d8/d9e/interface_i_atacable.html',1,'']]],
+  ['iatacable_2ecs_1',['IAtacable.cs',['../dd/d51/_i_atacable_8cs.html',1,'']]],
+  ['iatacante_2',['IAtacante',['../df/dd1/interface_i_atacante.html',1,'']]],
+  ['iatacante_2ecs_3',['IAtacante.cs',['../db/dc6/_i_atacante_8cs.html',1,'']]],
+  ['iniciarjuego_4',['IniciarJuego',['../db/df3/class_menu_principal.html#ada427905300c14e015af40885e023d9a',1,'MenuPrincipal']]],
+  ['iniciarola_5',['IniciarOla',['../d4/ddf/class_admin_spawner_enemigos.html#ad6da367c28726418c3eccf5188af96ea',1,'AdminSpawnerEnemigos']]],
+  ['iniciaroleada_6',['IniciarOleada',['../d3/d35/class_administrador_u_i.html#a5200e8bc2e93d8136096e4b28bdda950',1,'AdministradorUI']]],
+  ['iniciarrutinaobjetivo_7',['IniciarRutinaObjetivo',['../dd/d8a/class___tower.html#a28aedb373f03fb6ebdc3ff2ce9740880',1,'_Tower']]],
+  ['initialize_8',['Initialize',['../d3/d6e/class_admin_spawner_enemigos_1_1_horda_enemigos.html#af588359ad7d7c5d11c4da1028b24a86e',1,'AdminSpawnerEnemigos::HordaEnemigos']]],
+  ['inputs_9',['inputs',['../d9/d46/class_administrador_toques.html#a216d5a43d146e7c1fd2ef0122e6c97e1',1,'AdministradorToques']]],
+  ['instanciarenemigo_10',['InstanciarEnemigo',['../d4/ddf/class_admin_spawner_enemigos.html#a2dc7c6fcbc59529b93e2ecac668ae0e5',1,'AdminSpawnerEnemigos']]],
+  ['instanciartorre_11',['InstanciarTorre',['../dc/d43/class_administrador_torres.html#a0b35427e7ce49456c174663ca1f72bbe',1,'AdministradorTorres']]],
+  ['isgameactive_12',['IsGameActive',['../db/d10/class_game_manager.html#ac56105b6538866a5f604799f80d7f92b',1,'GameManager']]],
+  ['isgameend_13',['IsGameEnd',['../db/d10/class_game_manager.html#af9117dc040ec9136524dbe7b96d8a1b2',1,'GameManager']]],
+  ['isgamepause_14',['IsGamePause',['../db/d10/class_game_manager.html#a195f9ebd7466c918e4ccb5de13027696',1,'GameManager']]],
+  ['islevelcleared_15',['IsLevelCleared',['../db/d10/class_game_manager.html#ae09cfb423df4f455a69dcefaaa5b206a',1,'GameManager']]]
+];

@@ -1,4 +1,8 @@
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase padre que guarda
+ */
 public class _Menu : MonoBehaviour
 {
     #region Variables

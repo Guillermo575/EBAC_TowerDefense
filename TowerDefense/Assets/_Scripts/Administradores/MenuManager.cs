@@ -4,13 +4,19 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.EventSystems;
+/**
+ * @file
+ * @brief Archivo principal que maneja los menus del juego
+ */
 public class MenuManager : MonoBehaviour
 {
     #region Singleton
     private static MenuManager SingletonMenuManager;
+    /** @hidden */
     private MenuManager()
     {
     }
+    /** @hidden */
     private void CreateSingleton()
     {
         if (SingletonMenuManager == null)
@@ -22,6 +28,7 @@ public class MenuManager : MonoBehaviour
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
+    /** Solo se puede crear un objeto de la clase MenuManager, este metodo obtiene el objeto creado */
     public static MenuManager GetSingleton()
     {
         return SingletonMenuManager;
@@ -29,6 +36,10 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region Variables
+    /**
+     * Para navegar entre menus cada vez que se abre uno nueva se agrega a esta lista y en caso de salir
+     * y regresar al anterior se elimina el mas reciente para desplegar el anterior
+     */
     public List<GameObject> lstMenuTree;
     public Opciones opciones;
     public MenuConfirmar menuConfirmar;
@@ -41,21 +52,25 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region Start
+    /** @hidden */
     private void Awake()
     {
         CreateSingleton();
     }
+    /** @hidden */
     void Start()
     {
         lstMenuTree = new List<GameObject>();
         if(menuInicial.activeSelf) lstMenuTree.Add(menuInicial);
     }
+    /** @hidden */
     void Update()
     {
     }
     #endregion
 
     #region Menus
+    /** Elimina el menu actual y despliega el anterior de este */
     public void BackMenu()
     {
         if (lstMenuTree.Count > 1)
@@ -67,6 +82,11 @@ public class MenuManager : MonoBehaviour
             objBack.SetActive(true);
         }
     }
+
+    /**
+     * Desactiva el menu actual y despliega el mostrado \n
+     * @param objMenu: objeto que se mostrara como menu
+     */
     public void ShowMenu(GameObject objMenu)
     {
         if (objMenu != null)
@@ -76,6 +96,11 @@ public class MenuManager : MonoBehaviour
             objMenu.SetActive(true);
         }
     }
+
+    /**
+     * Activa/Desactiva todos los menus activos \n
+     * @param value: valor para activar los menus
+     */
     public void SetActiveCanvas(bool value = false)
     {
         var lst = lstMenuTree;
@@ -87,6 +112,8 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
+
+    /** Desactiva los menus activos y borra la lista de menus actual */
     public void DeleteMenuTree()
     {
         SetActiveCanvas(false);

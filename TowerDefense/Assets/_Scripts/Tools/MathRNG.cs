@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase que genera numeros pseudoaleatorios en base a una semilla inicial
+ */
 public class MathRNG
 {
     #region Variables
@@ -95,6 +99,7 @@ public class MathRNG
     #endregion
 
     #region Test Area
+    /** @hidden */
     public static void Testing()
     {
         int ciclos = 100;
@@ -125,6 +130,7 @@ public class MathRNG
     #endregion
 
     #region Tools
+    /** @hidden */
     public Vector2 getRandomSpawnPoint(Vector2 minValues, Vector2 maxValues)
     {
         var RanX = NextValueInt(0, 3);

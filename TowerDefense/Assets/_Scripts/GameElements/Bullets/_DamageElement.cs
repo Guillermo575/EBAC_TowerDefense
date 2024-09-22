@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+/**
+ * @file
+ * @brief Clase principal que se encarga de gestionar los objetos que atacan a los enemigos o al objetivo
+ */
 public class _DamageElement : MonoBehaviour, IAtacante
 {
     protected GameManager gameManager;
